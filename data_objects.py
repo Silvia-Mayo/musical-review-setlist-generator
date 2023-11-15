@@ -1,3 +1,9 @@
+'''
+Sophia Morgan and Sylvia Mayo
+COMP 333
+data_objects.py
+'''
+
 class singer_profile():
     ''' Class singer_profile contains the information for each singer profile 
     using the generator'''
