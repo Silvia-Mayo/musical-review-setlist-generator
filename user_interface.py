@@ -1,3 +1,9 @@
+'''
+Sophia Morgan and Sylvia Mayo
+COMP 333
+user_interface.py
+'''
+
 from data_objects import *
 
 class generator():
