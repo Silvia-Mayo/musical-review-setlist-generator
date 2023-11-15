@@ -1,9 +1,3 @@
-'''
-Sophia Morgan and Sylvia Mayo
-COMP 333
-Feature 1: Module that analyzes inputted singer profiles and determines appropriate songs
-'''
-
 class singer_profile():
     ''' Class singer_profile contains the information for each singer profile 
     using the generator'''
