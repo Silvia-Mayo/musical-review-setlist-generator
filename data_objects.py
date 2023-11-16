@@ -1,39 +1,52 @@
 '''
-Sophia Morgan and Sylvia Mayo
+Sophia Morgan and Silvia Mayo
 COMP 333
 data_objects.py
 '''
 
-class singer_profile():
-    ''' Class singer_profile contains the information for each singer profile 
-    using the generator'''
-    def __init__(self, range = '', style = '', genre = ''):
+class singer():
+    '''Class singer contains the information for each singer profile using the generator'''
+    def __init__(self, name = '', range = '', voice_type = ''):
+        self.name = name
         self.range = range
-        self.style = style
-        self.genre = genre
+        self.voice_type = voice_type
         
     def update_singer_profile(self):
         ''' A function to allow the user to make alterations to the singer profile
-            that they are searching for.'''
+            that they are searching for.
+            
+            input: nothing
+            returns: nothing'''
+        return
             
     def display_singer_profile():
-        '''A function to display a specific singer profile.'''
+        ''' A function to display a specific singer profile.
+        
+            input: nothing
+            returns: nothing'''
+        return
         
         
-class song_profile():
-    ''' Class singer_profile contains the information for each singer profile 
-    using the generator'''
-    def __init__(self, range = '', style = '', genre = '', number = 0):
+class song():
+    '''Class song contains the information for each song using the generator'''
+    def __init__(self, name = '', range = '', genre = '', length = 0):
+        self.name = name
         self.range = range
-        self.style = style
         self.genre = genre
-        self.number = 0
+        self.length = length
     
-    def song_to_singer(self, key):
+    def is_suitable(self, singer):
         ''' Compares a singer profile to the song profiles and if the 
             attributes match, then this song is a match and will be 
-            returned to the user.'''
+            returned to the user.
+            
+            input: singer
+            returns: Boolean'''
             
     def display_song_profile():
-        '''A function to display a specific song profile.'''
+        ''' A function to display a specific song profile.
+        
+            input: nothing
+            returns: nothing'''
+        return
     
