@@ -29,11 +29,12 @@ class singer():
         
 class song():
     '''Class song contains the information for each song using the generator'''
-    def __init__(self, name = '', range = '', genre = '', length = 0):
+    def __init__(self, name = '', length = 0, range = '', genre = '', show_title = ''):
         self.name = name
+        self.length = length
         self.range = range
         self.genre = genre
-        self.length = length
+        self.show_title = show_title
     
     def is_suitable(self, singer):
         ''' Compares a singer profile to the song profiles and if the 
