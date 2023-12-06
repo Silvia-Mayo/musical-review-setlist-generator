@@ -35,14 +35,26 @@ class generator():
             input: nothing
             returns: nothing
         '''
+        name = input("Enter the name of the song: ")
+        length = input("Enter the length of the song in seconds: ")
+        voice_range = input("Enter the voice range of the song: ")
+        genre = input("Enter the genre of this song: ")
+        show_title = input("Enter the show that this song is in: ")
+        song(self, name = name, length = length, voice_range = voice_range, genre = genre, show_title = show_title)
         return
     
+
     def add_singer_profile(self):
         ''' A function to add a singer profile to the database.
         
             input: nothing
             returns: nothing
         '''
+        name = input("Enter the name of the singer: ")
+        voice_range = input("Enter their voice range: ")
+        voice_type = input("Enter their voice type: ")
+        singer(self, name = name, voice_range = voice_range, voice_type = voice_type)
+        return
         
     def user_search(self, keyword, kind = 'both', name = '', range = ''):
         ''' A function to allow the user to search for any song or singer
@@ -51,8 +63,7 @@ class generator():
             input: keyword (to search all fields), kind (either 'song', 'singer', or both), name, range
             return: nothing, will print results
         '''
-        
-            
+                    
     def run_generator(self):
         ''' A function to run the generator based on user input. 
             The goal of this is to look like a survey in which the
@@ -72,7 +83,8 @@ class generator():
             print("2: Display all songs")
             print("3: Add a new song")
             print("4: Add a new user profile")
-            print("5: Generate setlist based on my prefs")
+            print("5: Add a new singer profile")
+            print("6: Generate setlist based on my prefs")
             print("\n")
             
             user_action = input("Enter a number: ")
@@ -86,6 +98,8 @@ class generator():
             if user_action == '4':
                 self.singer.update_singer_profile
             if user_action == '5':
+                self.generator.add_singer_profile
+            if user_action == '6':
                 user_prefs = self.analysis.get_user_input
                 self.analysis.search_by_user_prefs(user_prefs)
             
