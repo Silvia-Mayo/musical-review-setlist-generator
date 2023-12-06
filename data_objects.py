@@ -8,9 +8,9 @@ import numpy as np
 
 class singer():
     '''Class singer contains the information for each singer profile using the generator'''
-    def __init__(self, name = '', range = '', voice_type = ''):
+    def __init__(self, name = '', voice_range = '', voice_type = ''):
         self.name = name
-        self.range = range
+        self.range = voice_range
         self.voice_type = voice_type
         
     def update_singer_profile(self):
@@ -31,10 +31,10 @@ class singer():
         
 class song():
     '''Class song contains the information for each song using the generator'''
-    def __init__(self, name = '', length = 0, range = '', genre = '', show_title = ''):
+    def __init__(self, name = '', length = 0, voice_range = '', genre = '', show_title = ''):
         self.name = name
         self.length = length
-        self.range = range
+        self.range = voice_range
         self.genre = genre
         self.show_title = show_title
         
