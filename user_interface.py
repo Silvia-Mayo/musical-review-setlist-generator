@@ -5,6 +5,9 @@ user_interface.py
 '''
 
 from data_objects import *
+import csv
+import numpy as np
+
 
 class generator():
     ''' A class generator to display all information to the use and allow
