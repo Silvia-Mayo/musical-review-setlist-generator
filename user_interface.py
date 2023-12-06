@@ -49,8 +49,9 @@ class generator():
             profile in the database.
 
             input: keyword (to search all fields), kind (either 'song', 'singer', or both), name, range
-            return:
+            return: nothing, will print results
         '''
+        
             
     def run_generator(self):
         ''' A function to run the generator based on user input. 
@@ -62,3 +63,31 @@ class generator():
             input: nothing
             returns: nothing
         '''
+        
+        print("Welcome to the Musical Review Setlist Generator!")
+        stop_generator = 1
+        while stop_generator != 0:
+            print("What would you like to do?")
+            print("1: Search for a song")
+            print("2: Display all songs")
+            print("3: Add a new song")
+            print("4: Add a new user profile")
+            print("5: Generate setlist based on my prefs")
+            print("\n")
+            
+            user_action = input("Enter a number: ")
+            if user_action == '1':
+                key = input("Search for a song by singer, group number, show: ")
+                self.generator.user_search(key)
+            if user_action == '2':
+                self.generator.display_all_songs
+            if user_action == '3':
+                self.analysis.add_song
+            if user_action == '4':
+                self.singer.update_singer_profile
+            if user_action == '5':
+                user_prefs = self.analysis.get_user_input
+                self.analysis.search_by_user_prefs(user_prefs)
+            
+            
+
