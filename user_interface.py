@@ -66,6 +66,11 @@ class generator():
             input: keyword (to search all fields), kind (either 'song', 'singer', or both), name, range
             return: nothing, will print results
         '''
+        song_list = self.song.read_database('Test_MT_Database.csv')
+        index = np.where(song_list == keyword)
+        result = song_list[index]
+        print(result)
+        return
                     
     def run_generator(self):
         ''' A function to run the generator based on user input. 
