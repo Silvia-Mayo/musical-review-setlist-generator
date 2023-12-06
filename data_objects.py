@@ -39,6 +39,10 @@ class song():
         self.show_title = show_title
         
     def read_database(file_name : object) :
+        '''
+        Function to read the csv file and convert it to an np array
+        input: CSV file
+        output: np array'''
         with open(file_name) as csvfile:
             csv_read = csv.reader(csvfile, delimiter = '|')
             csv_list = list(csv_read)
