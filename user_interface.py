@@ -27,6 +27,9 @@ class generator():
             input: nothing
             returns: nothing
         '''
+        song_list = self.song.read_database('Test_MT_Database.csv')
+        for i in song_list:
+            self.song.display_song_profile(i)
         return
             
     def add_song(self):
