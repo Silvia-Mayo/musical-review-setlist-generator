@@ -5,6 +5,7 @@ user_interface.py
 '''
 
 from data_objects import *
+from analysis import *
 import csv
 import numpy as np
 
@@ -20,19 +21,19 @@ class generator():
             returns: nothing
         '''
         
-    def display_all_songs(self):
+    def display_all_songs():
         ''' A function to display all the songs that the generator has
             in its database
 
             input: nothing
             returns: nothing
         '''
-        song_list = self.song.read_database('Test_MT_Database.csv')
+        song_list = song.read_database('Test_MT_Database.csv')
         for i in song_list:
-            self.song.display_song_profile(i)
+            song.display_song_profile(i)
         return
-            
-    def add_song(self):
+
+    def add_song():
         ''' A function to add a song to the database.
         
             input: nothing
@@ -40,23 +41,24 @@ class generator():
         '''
         name = input("Enter the name of the song: ")
         length = input("Enter the length of the song in seconds: ")
-        voice_range = input("Enter the voice range of the song: ")
+        lohi = input("Enter the voice range of the song: ")
         genre = input("Enter the genre of this song: ")
         show_title = input("Enter the show that this song is in: ")
-        song(self, name = name, length = length, voice_range = voice_range, genre = genre, show_title = show_title)
+        a = Analysis()
+        a.add_song(song(name = name, length = int(length), lohi = lohi, genre = genre, show_title = show_title))
         return
     
 
-    def add_singer_profile(self):
+    def add_singer():
         ''' A function to add a singer profile to the database.
         
             input: nothing
             returns: nothing
         '''
         name = input("Enter the name of the singer: ")
-        voice_range = input("Enter their voice range: ")
-        voice_type = input("Enter their voice type: ")
-        singer(self, name = name, voice_range = voice_range, voice_type = voice_type)
+        lohi = input("Enter their voice range: ")
+        a = Analysis()
+        a.add_singer(singer(name = name, lohi = lohi))
         return
         
     def user_search(self, keyword, kind = 'both', name = '', range = ''):
@@ -66,7 +68,7 @@ class generator():
             input: keyword (to search all fields), kind (either 'song', 'singer', or both), name, range
             return: nothing, will print results
         '''
-        song_list = self.song.read_database('Test_MT_Database.csv')
+        song_list = song.read_database('Test_MT_Database.csv')
         index = np.where(song_list == keyword)
         result = song_list[index]
         print(result)
@@ -90,26 +92,24 @@ class generator():
             print("1: Search for a song")
             print("2: Display all songs")
             print("3: Add a new song")
-            print("4: Add a new user profile")
-            print("5: Add a new singer profile")
-            print("6: Generate setlist based on my prefs")
+            print("4: Add a new singer profile")
+            print("5: Generate setlist based on my prefs")
             print("\n")
             
             user_action = input("Enter a number: ")
             if user_action == '1':
                 key = input("Search for a song by singer, group number, show: ")
-                self.generator.user_search(key)
+                self.user_search(key)
             if user_action == '2':
-                self.generator.display_all_songs
+                self.display_all_songs()
             if user_action == '3':
-                self.analysis.add_song
+                self.add_song()
             if user_action == '4':
-                self.singer.update_singer_profile
+                self.add_singer()
             if user_action == '5':
-                self.generator.add_singer_profile
-            if user_action == '6':
-                user_prefs = self.analysis.get_user_input
-                self.analysis.search_by_user_prefs(user_prefs)
-            
-            
+                a = Analysis()
+                user_prefs = a.get_user_input()
+                a.search_by_user_prefs(user_prefs)
+
+
 

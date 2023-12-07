@@ -7,6 +7,7 @@ A file to actually run the analysis for the generator.
 
 import csv
 import numpy as np
+from data_objects import *
 
 
 class Analysis():
@@ -35,20 +36,20 @@ class Analysis():
             returns: nothing'''
         return
         
-    def add_song(self, song):
+    def add_song(self, one_song: song):
         ''' A function to add a song to the database.
             input: song to be added
             returns: nothing'''
         return
         
-    def add_singer(self, singer):
+    def add_singer(self, one_singer: singer):
         ''' A function to add a singer profile to the database.
         
             input: singer to be added
             returns: nothing'''
         return
         
-    def search_by_singer_profile(self, singer):
+    def search_by_singer_profile(self, one_singer: singer):
         '''A function that takes in a singer profile and returns a
            list of songs that are suited for that singer
            
@@ -62,7 +63,7 @@ class Analysis():
             input: user_prefs to be analyzed
             returns: song list'''
             
-    def search_by_group_number(self, number):
+    def search_by_group_number(self, number: int):
         ''' A function that searches for songs that are suited for a 
             specific number of people.
             
