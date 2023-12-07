@@ -59,17 +59,19 @@ class generator():
         a = Analysis()
         a.add_singer(singer(name = name, lohi = lohi))
         return
-        
-    def user_search(self, keyword, kind = 'both', name = '', range = ''):
+      
+    '''def user_search(self, keyword, kind = 'both', name = '', range = ''):'''
+  
+    def user_search(keyword):
         ''' A function to allow the user to search for any song or singer
             profile in the database.
 
             input: keyword (to search all fields), kind (either 'song', 'singer', or both), name, range
             return: nothing, will print results
         '''
-        song_list = song.read_database('Test_MT_Database.csv')
+        song_list = song.read_database('MT_Database.csv')
         index = np.where(song_list == keyword)
-        result = song_list[index,:]
+        result = song_list[index[0],:]
         print(result)
         return
                     
@@ -118,3 +120,85 @@ if __name__ == '__main__':
     user_interface = generator()
     user_interface.run_generator()
 
+    def unit_tests():
+        '''
+        UNIT TESTS
+        
+        Hi Professor Roberts,
+        
+        These unit tests will run automatically after you quit the generator above.
+        The functions I tested include user_search and display_all_songs. Unfortunately,
+        I am having an issue comparing np arrays and all of these instances return false 
+        even when I am sure that they are the same, so I will have to look into that more later.
+        Additionally, there are a lot of extra spaces in our database csv files which I will have 
+        to fix later, but for now, these tests account for these inconsistencies as we are still
+        building our full database.'''
+
+
+        print("Test 1: \n")
+        test1 = generator.user_search(' Hadestown')
+        test1_expected = np.array([["All I've Ever Known " ,' 243 ' ,' Hadestown'],
+        ['Epic III ' ,' 351 ' ,' Hadestown'],
+        ['Flowers ' ,' 211 ' ,' Hadestown'],
+        ['Hey, Little Songbird ' ,' 212 ' ,' Hadestown'],
+        ["Livin' It Up on Top " ,' 329 ', ' Hadestown'],
+        ['Our Lady of the Underground ' ,' 324 ' ,' Hadestown'],
+        ['Wait for Me ' ,' 214 ' ,' Hadestown'],
+        ['Way Down Hadestown ' ,' 300 ' ,' Hadestown'],
+        ['We Raise Our Cups ' ,' 125 ' ,' Hadestown'],
+        ['Wedding Song ' ,' 213 ' ,' Hadestown'],
+        ['When the Chips Are Down ' ,' 134 ', ' Hadestown'],
+        ['Why We Build the Wall ', ' 240 ' ,' Hadestown']])
+        print("\n")
+
+        print("test 1 expected = ", test1_expected)
+        if np.array_equal(test1, test1_expected):
+            print("test 1 passed!")
+        else: print("test 1 failed")
+        print("\n")
+        
+        print("Test 2: \n")
+        test2 = generator.user_search(' 140 ')
+        test2_expected = np.array([['Angel of Music ' ,' 140 ', ' The Phantom of the Opera'],
+                                ['My Favorite Things ' ,' 140 ' ,' The Sound of Music']])
+        print("\n")
+
+        print("test 2 expected = ", test2_expected)
+        if np.array_equal(test2, test2_expected):
+            print("test 2 passed!")
+        else: print("test 2 failed")
+        
+        print("\n")
+        
+        test3 = generator.user_search('Agony ')
+        test3_expected = np.array([['Agony ' ,' 147 ', ' Into the Woods']])
+        print(test3_expected)
+        if np.array_equal(test3, test3_expected):
+            print("test 3 passed!")
+        else: print("test 3 failed")
+        print("\n")
+        print("Test 4: \n")
+        test4 = generator.user_search('')
+        test4_expected = np.array([])
+        print(test4_expected)
+        if np.array_equal(test4, test4_expected):
+            print("test 4 passed!")
+        else: print("test 4 failed")
+        print("\n")
+
+        print("Test 5: \n")
+        test5 = generator.display_all_songs()
+        test5_expected = np.array([['Bring Him Home', '195', 'E3-A4', 'Operatic', 'Les Miserables'],
+                                    ['Freeze Your Brain', '173', 'Db3-G4', 'Pop-Rock', 'Heathers'],
+                                    ['Green Finch and Linnet Bird', '144', 'C4-G5', 'Operatic', 'Sweeney Todd'],
+                                    ['Mein Herr', '200', 'G3-D5', 'Jazz', 'Cabaret'],
+                                    ['Pulled', '179', 'C4-E5', 'Pop-Rock', 'The Addams Family']])
+        
+        print(test5_expected)
+        print("\n")
+        if np.array_equal(test5, test5_expected):
+            print("test 5 passed!")
+        else: print("test 5 failed")
+        print("\n")
+        
+    unit_tests()
