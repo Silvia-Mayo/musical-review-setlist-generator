@@ -29,8 +29,7 @@ class generator():
             returns: nothing
         '''
         song_list = song.read_database('Test_MT_Database.csv')
-        for i in song_list:
-            song.display_song_profile(i)
+        print(song_list)
         return
 
     def add_song():
@@ -70,7 +69,7 @@ class generator():
         '''
         song_list = song.read_database('Test_MT_Database.csv')
         index = np.where(song_list == keyword)
-        result = song_list[index]
+        result = song_list[index,:]
         print(result)
         return
                     
@@ -118,6 +117,4 @@ if __name__ == '__main__':
     print("Running the generator ...")
     user_interface = generator()
     user_interface.run_generator()
-
-
 
