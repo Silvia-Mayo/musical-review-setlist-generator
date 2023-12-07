@@ -94,6 +94,7 @@ class generator():
             print("3: Add a new song")
             print("4: Add a new singer profile")
             print("5: Generate setlist based on my prefs")
+            print("6: Quit")
             print("\n")
             
             user_action = input("Enter a number: ")
@@ -110,6 +111,13 @@ class generator():
                 a = Analysis()
                 user_prefs = a.get_user_input()
                 a.search_by_user_prefs(user_prefs)
+            if user_action == '6':
+                stop_generator = 0
+                
+if __name__ == '__main__':
+    print("Running the generator ...")
+    user_interface = generator()
+    user_interface.run_generator()
 
 
 
