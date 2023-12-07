@@ -5,6 +5,10 @@ analysis.py
 A file to actually run the analysis for the generator.
 '''
 
+import csv
+import numpy as np
+
+
 class Analysis():
     '''The generator will run analysis on the user inputted information
        and will return a setlist.'''
