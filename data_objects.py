@@ -48,7 +48,7 @@ class note_range():
         num = scale_no + 12 * octave
         return num
 
-    def contains_range(self, song_range: note_range):
+    def contains_range(self, song_range: 'note_range'):
         '''Takes in a note_range object to compare to self and determine if a singer can sing a song
         
             input: note_range object of a song (self is presumably a singer)
