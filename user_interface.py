@@ -102,11 +102,11 @@ class generator():
                 key = input("Search for a song by singer, group number, show: ")
                 self.user_search(key)
             if user_action == '2':
-                self.display_all_songs()
+                generator.display_all_songs()
             if user_action == '3':
-                self.add_song()
+                generator.add_song()
             if user_action == '4':
-                self.add_singer()
+                generator.add_singer()
             if user_action == '5':
                 a = Analysis()
                 user_prefs = a.get_user_input()
