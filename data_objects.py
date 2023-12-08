@@ -146,5 +146,20 @@ c_r = [(('C4', 'G5'), ('G4', 'C5'), True), (('Cb4', 'B#4'), ('B#3', 'Cb5'), True
 for ((l1, h1), (l2, h2), b) in c_r:
     gen_unit_test(note_range(l1, h1).contains_range, note_range(l2, h2), b)
 
-r_d = [()]
-i_s = [()]
+songs = [song('Bring Him Home', 195, 'E3-A4', 'Operatic', 'Les Miserables'),
+         song('Freeze Your Brain', 173, 'Db3-G4', 'Pop-Rock', 'Heathers'),
+         song('Green Finch and Linnet Bird', 144, 'C4-G5', 'Operatic', 'Sweeney Todd'),
+         song('Mein Herr', 200, 'G3-D5', 'Jazz', 'Cabaret'),
+         song('Pulled', 179, 'C4-E5', 'Pop-Rock', 'The Addams Family')]
+
+Olivia = singer('Olivia', 'Bb3-A5')
+Georgia = singer('Georgia', 'F3-E5')
+Alex = singer('Alex', 'Eb3-D5')
+David = singer('David', 'A2-G4')
+Patrick = singer('Patrick', 'C2-D4')
+
+singers = [[Georgia, Alex], [Olivia, David], [Patrick, Olivia], [David, Alex], [Patrick, Georgia]]
+
+for i in range(5):
+    for n in range(2):
+        gen_unit_test(songs[i].is_suitable, singers[i][n], bool(n))
