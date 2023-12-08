@@ -5,6 +5,7 @@ data_objects.py
 '''
 import csv
 import numpy as np
+from unit_test import gen_unit_test
 
 
 class note_range():
@@ -95,7 +96,7 @@ class song():
         self.genre = genre
         self.show_title = show_title
         
-    def read_database(file_name : object) :
+    def read_database(file_name: object) :
         '''
         Function to read the csv file and convert it to an np array
         input: CSV file
@@ -129,4 +130,21 @@ class song():
         print(' Genre:', self.genre)
         print('  Show:', self.show_title)
         return
-    
+
+g_n = [('C0', 0), ('F#1', 18), ('Gb1', 18), ('D#3', 39), ('Fb3', 40),
+       ('C4', 48), ('A4', 57), ('Cb5', 59), ('B#4', 60), ('B#9', 120)]
+
+for (inp, out) in g_n:
+    gen_unit_test(note_range.get_num, inp, out)
+
+c_r = [(('C4', 'G5'), ('G4', 'C5'), True), (('Cb4', 'B#4'), ('B#3', 'Cb5'), True),
+       (('G#4', 'A#4'), ('A4', 'A4'), True), (('Db4', 'Cb5'), ('Fb4', 'B#4'), False),
+       (('F0', 'F1'), ('C4', 'G5'), False), (('F3', 'C6'), ('Bb2', 'G4'), False),
+       (('F3', 'C6'), ('C4', 'G5'), True), (('C4', 'G5'), ('F3', 'C6'), False),
+       (('E#2', 'Bb3'), ('Fb2', 'G3'), False), (('E#2', 'Bb3'), ('F2', 'G3'), True)]
+
+for ((l1, h1), (l2, h2), b) in c_r:
+    gen_unit_test(note_range(l1, h1).contains_range, note_range(l2, h2), b)
+
+r_d = [()]
+i_s = [()]
