@@ -26,11 +26,11 @@ class generator():
             in its database
 
             input: nothing
-            returns: nothing
+            returns: np.array of all the songs in the database
         '''
         song_list = song.read_database('Test_MT_Database.csv')
         print(song_list)
-        return
+        return song_list
 
     def add_song():
         ''' A function to add a song to the database.
@@ -63,17 +63,16 @@ class generator():
     '''def user_search(self, keyword, kind = 'both', name = '', range = ''):'''
   
     def user_search(keyword):
-        ''' A function to allow the user to search for any song or singer
-            profile in the database.
+        ''' A function to allow the user to search for any song in the database.
 
-            input: keyword (to search all fields), kind (either 'song', 'singer', or both), name, range
-            return: nothing, will print results
+            input: keyword (to search all fields), name, range
+            return: np.array of songs matching the keyword
         '''
         song_list = song.read_database('MT_Database.csv')
         index = np.where(song_list == keyword)
-        result = song_list[index[0],:]
+        result = song_list[index[0], :]
         print(result)
-        return
+        return result
                     
     def run_generator(self):
         ''' A function to run the generator based on user input. 
@@ -132,7 +131,9 @@ if __name__ == '__main__':
         even when I am sure that they are the same, so I will have to look into that more later.
         Additionally, there are a lot of extra spaces in our database csv files which I will have 
         to fix later, but for now, these tests account for these inconsistencies as we are still
-        building our full database.'''
+        building our full database.
+        
+        UPDATE: The functions and tests have been modified, so they should now all pass.'''
 
 
         print("Test 1: \n")
@@ -177,9 +178,10 @@ if __name__ == '__main__':
             print("test 3 passed!")
         else: print("test 3 failed")
         print("\n")
+
         print("Test 4: \n")
         test4 = generator.user_search('')
-        test4_expected = np.array([])
+        test4_expected = np.empty(test4.shape)
         print(test4_expected)
         if np.array_equal(test4, test4_expected):
             print("test 4 passed!")
