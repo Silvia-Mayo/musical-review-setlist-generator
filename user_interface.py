@@ -102,13 +102,12 @@ class generator():
                 key = input("Search for a song by singer, group number, show: ")
                 self.user_search(key)
             if user_action == '2':
-                print("How would you like to sort the songs?")
-                print("1: Song")
-                print("2: Musical")
-                print("3: Length")
+                print("How would you like to display the songs?")
+                print("1: Alphabetically by song")
+                print("2: From shortest to longest by length")
+                print("3: Alphabetically by musical")
                 sort_by = input("Enter a number: ")
-                sorted_songs = self.analysis.sort_songs(self,sort_by)
-                generator.display_all_songs()
+                Analysis.sort_songs(self,sort_by)
             if user_action == '3':
                 Analysis.add_song(self)
             if user_action == '4':
