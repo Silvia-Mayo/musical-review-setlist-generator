@@ -27,6 +27,7 @@ class Analysis():
         
             input: key for the song sorting
             returns: nothing'''
+        song_list = song.read_database('Test_MT_Database.csv')
         return
         
     def sort_singers(self, key):
@@ -35,12 +36,25 @@ class Analysis():
             input: key for the singer sorting
             returns: nothing'''
         return
-        
-    def add_song(self, one_song: song):
+
+    def add_song(self):
         ''' A function to add a song to the database.
             input: song to be added
             returns: nothing'''
-        return
+        file_path = 'Test2_MT_Database.csv'
+
+        with open('Test2_MT_Database.csv', 'r', newline='') as csvfile:
+                csv_read = csv.reader(csvfile)
+                existing_data = list(csv_read)
+        song_name = input("Enter the song name: ")
+        song_length = input("Enter the song length as an int in seconds: ")
+        song_musical = input("Enter the name of the musical this song is in: ")
+        new_entry = [song_name +"|"+ song_length +"|"+ song_musical]
+        existing_data.append(new_entry)
+        with open(file_path, 'a', newline='') as csvfile:
+            csvfile.write('\n')
+            writer = csv.writer(csvfile)
+            writer.writerow(new_entry)
         
     def add_singer(self, one_singer: singer):
         ''' A function to add a singer profile to the database.
