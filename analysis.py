@@ -27,8 +27,16 @@ class Analysis():
         
             input: key for the song sorting
             returns: nothing'''
-        song_list = song.read_database('Test_MT_Database.csv')
-        return
+        np_songs = song.read_database('Test2_MT_Database.csv')
+        if key == '1':
+            column_sort = 0
+        if key == '2':
+            column_sort = 1
+        if key == '3':
+            column_sort = 2
+        sorted_songs = np.argsort(np_songs[:, column_sort])
+        print (np_songs[sorted_songs])
+        return (np_songs[sorted_songs])
         
     def sort_singers(self, key):
         ''' A function to sort the singers based on user input (in place)
