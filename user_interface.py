@@ -100,7 +100,7 @@ class generator():
             user_action = input("Enter a number: ")
             if user_action == '1':
                 key = input("Search for a song by singer, group number, show: ")
-                self.user_search(key)
+                generator.user_search(key)
             if user_action == '2':
                 print("How would you like to display the songs?")
                 print("1: Alphabetically by song")
