@@ -195,11 +195,11 @@ if __name__ == '__main__':
 
         print("Test 5: \n")
         test5 = generator.display_all_songs()
-        test5_expected = np.array([['Bring Him Home', '195', 'E3-A4', 'Operatic', 'Les Miserables'],
-                                    ['Freeze Your Brain', '173', 'Db3-G4', 'Pop-Rock', 'Heathers'],
-                                    ['Green Finch and Linnet Bird', '144', 'C4-G5', 'Operatic', 'Sweeney Todd'],
-                                    ['Mein Herr', '200', 'G3-D5', 'Jazz', 'Cabaret'],
-                                    ['Pulled', '179', 'C4-E5', 'Pop-Rock', 'The Addams Family']])
+        test5_expected = np.array([['Bring Him Home', '195', "['E3-A4']", 'Operatic', 'False', 'Les Miserables'],
+                                    ['Freeze Your Brain', '173', "['Db3-G4']", 'Pop-Rock', 'False', 'Heathers'],
+                                    ['Green Finch and Linnet Bird', '144', "['C4-G5']", 'Operatic', 'False', 'Sweeney Todd'],
+                                    ['Mein Herr', '200', "['G3-D5']", 'Jazz', 'False', 'Cabaret'],
+                                    ['Pulled', '179', "['C4-E5']", 'Pop-Rock', 'False', 'The Addams Family']])
         
         print(test5_expected)
         print("\n")

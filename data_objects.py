@@ -11,7 +11,8 @@ from unit_test import gen_unit_test
 class note_range():
     '''Class note_range allows the program to interpret a string
     representing a range of musical notes numerically and meaningfully'''
-    def __init__(self, low, high):
+    def __init__(self, lohi):
+        [low, high] = lohi.split('-')
         self.low = low
         self.high = high
 
@@ -64,8 +65,7 @@ class singer():
     def __init__(self, name = '', lohi = ''):
         self.name = name
         self.lohi = lohi
-        [low, high] = lohi.split('-')
-        self.voice_range = note_range(low, high)
+        self.voice_range = note_range(lohi)
         
     def update_singer_profile(self):
         ''' A function to allow the user to make alterations to the singer profile
@@ -87,16 +87,16 @@ class singer():
         
 class song():
     '''Class song contains the information for each song using the generator'''
-    def __init__(self, name = '', length = 0, lohi = '', genre = '', show_title = ''):
+    def __init__(self, name = '', length = 0, ranges = [], genre = '', is_group = False, show_title = ''):
         self.name = name
         self.length = length
-        self.lohi = lohi
-        [low, high] = lohi.split('-')
-        self.note_range = note_range(low, high)
+        self.ranges = ranges
+        self.note_ranges = [note_range(lohi) for lohi in ranges]
         self.genre = genre
+        self.is_group = is_group
         self.show_title = show_title
         
-    def read_database(file_name: object) :
+    def read_database(file_name: object):
         '''
         Function to read the csv file and convert it to an np array
         input: CSV file
@@ -104,7 +104,7 @@ class song():
         with open(file_name) as csvfile:
             csv_read = csv.reader(csvfile, delimiter = '|')
             csv_list = list(csv_read)
-            if len(csv_list) == 0: 
+            if len(csv_list) == 0:
                 return np.array([])
             csv_array = np.array(csv_list)
             return(csv_array)
@@ -117,18 +117,22 @@ class song():
             
             input: singer
             returns: Boolean'''
-        return one_singer.voice_range.contains_range(self.note_range)
+        for nr in self.note_ranges:
+            if one_singer.voice_range.contains_range(nr):
+                return True
+        return False
             
     def display_song_profile(self):
         ''' A function to display a specific song profile.
         
             input: nothing
             returns: nothing'''
-        print('  Name:', self.name)
-        print('Length:', self.length, 'seconds (' + str(self.length // 60) + 'min', str(self.length % 60) + 's)')
-        print(' Range:', self.lohi)
-        print(' Genre:', self.genre)
-        print('  Show:', self.show_title)
+        print('        Name:', self.name)
+        print('      Length:', self.length, 'seconds (' + str(self.length // 60) + 'min', str(self.length % 60) + 's)')
+        print('      Ranges:', self.ranges)
+        print('       Genre:', self.genre)
+        print('Group Number?', self.is_group)
+        print('        Show:', self.show_title)
         return
 
 g_n = [('C0', 0), ('F#1', 18), ('Gb1', 18), ('D#3', 39), ('Fb3', 40),
@@ -137,20 +141,20 @@ g_n = [('C0', 0), ('F#1', 18), ('Gb1', 18), ('D#3', 39), ('Fb3', 40),
 for (inp, out) in g_n:
     gen_unit_test(note_range.get_num, inp, out)
 
-c_r = [(('C4', 'G5'), ('G4', 'C5'), True), (('Cb4', 'B#4'), ('B#3', 'Cb5'), True),
-       (('G#4', 'A#4'), ('A4', 'A4'), True), (('Db4', 'Cb5'), ('Fb4', 'B#4'), False),
-       (('F0', 'F1'), ('C4', 'G5'), False), (('F3', 'C6'), ('Bb2', 'G4'), False),
-       (('F3', 'C6'), ('C4', 'G5'), True), (('C4', 'G5'), ('F3', 'C6'), False),
-       (('E#2', 'Bb3'), ('Fb2', 'G3'), False), (('E#2', 'Bb3'), ('F2', 'G3'), True)]
+c_r = [('C4-G5', 'G4-C5', True), ('Cb4-B#4', 'B#3-Cb5', True),
+       ('G#4-A#4', 'A4-A4', True), ('Db4-Cb5', 'Fb4-B#4', False),
+       ('F0-F1', 'C4-G5', False), ('F3-C6', 'Bb2-G4', False),
+       ('F3-C6', 'C4-G5', True), ('C4-G5', 'F3-C6', False),
+       ('E#2-Bb3', 'Fb2-G3', False), ('E#2-Bb3', 'F2-G3', True)]
 
-for ((l1, h1), (l2, h2), b) in c_r:
-    gen_unit_test(note_range(l1, h1).contains_range, note_range(l2, h2), b)
+for (lohi1, lohi2, b) in c_r:
+    gen_unit_test(note_range(lohi1).contains_range, note_range(lohi2), b)
 
-songs = [song('Bring Him Home', 195, 'E3-A4', 'Operatic', 'Les Miserables'),
-         song('Freeze Your Brain', 173, 'Db3-G4', 'Pop-Rock', 'Heathers'),
-         song('Green Finch and Linnet Bird', 144, 'C4-G5', 'Operatic', 'Sweeney Todd'),
-         song('Mein Herr', 200, 'G3-D5', 'Jazz', 'Cabaret'),
-         song('Pulled', 179, 'C4-E5', 'Pop-Rock', 'The Addams Family')]
+songs = [song('Bring Him Home', 195, ['E3-A4'], 'Operatic', False, 'Les Miserables'),
+         song('Freeze Your Brain', 173, ['Db3-G4'], 'Pop-Rock', False, 'Heathers'),
+         song('Green Finch and Linnet Bird', 144, ['C4-G5'], 'Operatic', False, 'Sweeney Todd'),
+         song('Mein Herr', 200, ['G3-D5'], 'Jazz', False, 'Cabaret'),
+         song('Pulled', 179, ['C4-E5'], 'Pop-Rock', False, 'The Addams Family')]
 
 Olivia = singer('Olivia', 'Bb3-A5')
 Georgia = singer('Georgia', 'F3-E5')
