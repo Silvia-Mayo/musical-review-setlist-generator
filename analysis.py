@@ -20,6 +20,7 @@ class Analysis():
         
             input: nothing
             returns: nothing'''
+        self.singers = np.array([])
         return
         
     def sort_songs(self, key):
@@ -28,12 +29,7 @@ class Analysis():
             input: key for the song sorting
             returns: nothing'''
         np_songs = song.read_database('Test2_MT_Database.csv')
-        if key == '1':
-            column_sort = 0
-        if key == '2':
-            column_sort = 1
-        if key == '3':
-            column_sort = 2
+        column_sort = int(key) - 1
         sorted_songs = np.argsort(np_songs[:, column_sort])
         print (np_songs[sorted_songs])
         return (np_songs[sorted_songs])
@@ -55,9 +51,19 @@ class Analysis():
                 csv_read = csv.reader(csvfile)
                 existing_data = list(csv_read)
         song_name = input("Enter the song name: ")
-        song_length = input("Enter the song length as an int in seconds: ")
+        ms_list = input("Enter the song length in the minute:seconds format: ").split(':')
+        song_length = int(ms_list[0]) * 60 + int(ms_list[1])
+        song_ranges = []
+        v_range = input("Type a vocal range (the lowest and highest notes separated by a hyphen)\
+                        for each soloist in the song. Press 'Enter' when done: ")
+        while v_range:
+            song_ranges.append(v_range)
+            v_range = input("Type a vocal range (the lowest and highest notes separated by a hyphen)\
+                            for each soloist in the song. Press 'Enter' when done: ")
+        song_genre = input("What genre best describes this song?\nPlease choose from 'Folk', 'Jazz', 'Operatic', 'Pop-Rock', and 'R&B': ")
+        song_is_group = bool(int(input("Is this song a group number (is there back-up singing)? Type 1 for yes and 0 for no: ")))
         song_musical = input("Enter the name of the musical this song is in: ")
-        new_entry = [song_name +"|"+ song_length +"|"+ song_musical]
+        new_entry = [song_name + "|" + str(song_length) + "|" + str(song_ranges) + "|" + song_genre + "|" + str(song_is_group) + "|" + song_musical]
         existing_data.append(new_entry)
         with open(file_path, 'a', newline='') as csvfile:
             csvfile.write('\n')
@@ -69,6 +75,7 @@ class Analysis():
         
             input: singer to be added
             returns: nothing'''
+        self.singers = np.append(self.singers, [one_singer.name, one_singer.lohi, one_singer])
         return
         
     def search_by_singer_profile(self, one_singer: singer):
