@@ -77,20 +77,41 @@ class Analysis():
             returns: nothing'''
         self.singers = np.append(self.singers, [one_singer.name, one_singer.lohi, one_singer])
         return
+    
         
-    def search_by_singer_profile(self, one_singer: singer):
+    def songs_for_show_by_genre_singer_profile(self, one_singer: singer):
         '''A function that takes in a singer profile and returns a
            list of songs that are suited for that singer
            
            input: singer to be analyzed
            returns: song list'''
            
-    def search_by_user_prefs(self, user_prefs):
+    def songs_for_show_by_genre(self, song_list):
         ''' A function that takes in user preferences and returns a 
             list of songs that are suited for that person
             
             input: user_prefs to be analyzed
             returns: song list'''
+
+        print("These are the possible genres: 1:Jazz, 2:R&B, 3:Operatic, 4:Folk, 5:Contemporary")
+        genre = input("Enter a genre (number): ")
+        if genre == '1':
+            index = np.where(song_list == 'Jazz')
+            setlist = song_list[index[0], :]
+        if genre == '2':
+            index = np.where(song_list == 'R&B')
+            setlist = song_list[index[0], :]
+        if genre == '3':
+            index = np.where(song_list == 'Operatic')
+            setlist = song_list[index[0], :]
+        if genre == '4':
+            index = np.where(song_list == 'Folk')
+            setlist = song_list[index[0], :]
+        if genre == '5':
+            index = np.where(song_list == 'Contemporary')
+            setlist = song_list[index[0], :]
+        setlist = np.array(setlist)
+        return setlist
             
     def search_by_group_number(self, number: int):
         ''' A function that searches for songs that are suited for a 
@@ -99,14 +120,24 @@ class Analysis():
             input: number of people, int
             returns: song list'''
             
-    def songs_for_show(self, show):
+    def songs_for_show_by_time(self, setlist):
         ''' A function that takes in a show and its length and other
             attributes if necessary and returns a list of songs that
             will fill the allotted time.
             
             input: show length
             returns: song list'''
-        return song.read_database('Test2_MT_Database.csv')
+        time = int(input("Enter length of your show in seconds: "))
+        sl = []
+        start_time = 0
+        np.random.shuffle(setlist)
+        for songs in setlist:
+            name,length,srange,style,group,show = songs
+            if (int(length) + start_time) <= time:
+                sl.append(songs)
+                start_time = start_time + int(length)
+        setlist = np.array(sl)
+        return setlist
         
     def get_user_input(self):
         ''' A function to get user input on what they are
@@ -115,44 +146,18 @@ class Analysis():
             input: nothing
             returns: nothing'''
         song_list = song.read_database('Test2_MT_Database.csv')
-        setlist = []
         
         search_by_genre = input("Would you like to consider genre when building your setlist? (y:yes, n: no) ")
         if search_by_genre == 'y':
-            print("These are the possible genres: 1:Jazz, 2:R&B, 3:Operatic, 4:Folk, 5:Contemporary")
-            genre = input("Enter a genre (number): ")
-            if genre == '1':
-                index = np.where(song_list == 'Jazz')
-                setlist = song_list[index[0], :]
-            if genre == '2':
-                index = np.where(song_list == 'R&B')
-                setlist = song_list[index[0], :]
-            if genre == '3':
-                index = np.where(song_list == 'Operatic')
-                setlist = song_list[index[0], :]
-            if genre == '4':
-                index = np.where(song_list == 'Folk')
-                setlist = song_list[index[0], :]
-            if genre == '5':
-                index = np.where(song_list == 'Contemporary')
-                setlist = song_list[index[0], :]
-        setlist = np.array(setlist)
+            setlist = Analysis.songs_for_show_by_genre(self, song_list)
+        
         search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y:yes, n: no) ")
         if search_by_singer_ranges == 'y':
-            '''return setlist'''
-        
+            setlist = Analysis.songs_for_show_by_genre_singer_profile(self)
         
         search_by_timetime = input("Would you like to generate a setlist based on the length of your show? (y: yes, n: no) ")
         if search_by_timetime == 'y':
-            time = int(input("Enter length of your show in seconds: "))
-            sl = []
-            start_time = 0
-            np.random.shuffle(setlist)
-            for songs in song_list:
-                name,length,srange,style,group,show = songs
-                if (int(length) + start_time) <= time:
-                    sl.append(songs)
-                    start_time = start_time + int(length)
-            setlist = np.array(sl)
+            setlist = Analysis.songs_for_show_by_time(self, setlist)
         print (setlist)
         return (setlist)
+    
