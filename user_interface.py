@@ -20,17 +20,6 @@ class generator():
             input: nothing
             returns: nothing
         '''
-        
-    def display_all_songs():
-        ''' A function to display all the songs that the generator has
-            in its database
-
-            input: nothing
-            returns: np.array of all the songs in the database
-        '''
-        song_list = song.read_database('Test_MT_Database.csv')
-        print(song_list)
-        return song_list
 
     def add_song():
         ''' A function to add a song to the database.
@@ -112,7 +101,7 @@ class generator():
         while stop_generator != 0:
             print("What would you like to do?")
             print("1: Search for a song")
-            print("2: Display all songs")
+            print("2: Browse all songs")
             print("3: Add a new song")
             print("4: Add a new singer profile")
             print("5: Generate setlist based on my prefs")
