@@ -70,9 +70,15 @@ class Analysis():
             returns: nothing'''
         self.singers = np.append(self.singers, [one_singer.name, one_singer.lohi, one_singer])
         return
-    
+
+    def sort_singers(self, key):
+        ''' A function to sort the singers based on user input (in place)
         
-    def songs_for_show_by_genre_singer_profile(self, one_singer: singer):
+            input: key for the singer sorting
+            returns: nothing'''
+        return
+        
+    def songs_for_show_by_singer_profile(self, one_singer: singer):
         '''A function that takes in a singer profile and returns a
            list of songs that are suited for that singer
            
@@ -132,9 +138,4 @@ class Analysis():
         setlist = np.array(sl)
         return setlist
         
-    def sort_singers(self, key):
-        ''' A function to sort the singers based on user input (in place)
-        
-            input: key for the singer sorting
-            returns: nothing'''
-        return
+    
