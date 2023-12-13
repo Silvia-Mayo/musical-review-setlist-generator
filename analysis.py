@@ -33,13 +33,6 @@ class Analysis():
         sorted_songs = np.argsort(np_songs[:, column_sort])
         print (np_songs[sorted_songs])
         return (np_songs[sorted_songs])
-        
-    def sort_singers(self, key):
-        ''' A function to sort the singers based on user input (in place)
-        
-            input: key for the singer sorting
-            returns: nothing'''
-        return
 
     def add_song(self):
         ''' A function to add a song to the database.
@@ -139,4 +132,9 @@ class Analysis():
         setlist = np.array(sl)
         return setlist
         
-    
+    def sort_singers(self, key):
+        ''' A function to sort the singers based on user input (in place)
+        
+            input: key for the singer sorting
+            returns: nothing'''
+        return
