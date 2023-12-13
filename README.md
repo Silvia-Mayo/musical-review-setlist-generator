@@ -7,10 +7,10 @@ A musical review is a performance of many songs, usually from the musical theate
 
 ## Proposed Features
 
-1. Module that analyzes inputted singer profiles and determines appropriate songs
-2. Module that incorporates stylistic priorities of the user (genre, choreographical aspect)
-3. Module that integrates preferred amount of group numbers and how equitably each performer is featured
-4. Module that takes in specified length of show and orders songs into a suitable setlist
+1. Module that analyzes inputted singer ranges and determines appropriate songs
+2. Module that analyzes stylistic priorities of the user such as genre
+3. Module that allows the user to browse and interact with the song database
+4. Module that takes in specified length of show and outputs a suitable setlist
 
 ## Stakeholders and Intended Users
 
