@@ -73,52 +73,6 @@ class generator():
         result = song_list[index[0], :]
         print(result)
         return result
-    
-    def get_user_input(self):
-        ''' A function to get user input on what they are
-            aiming to find by using this generator
-            
-            input: nothing
-            returns: nothing'''
-        song_list = song.read_database('MT_Database.csv')
-        setlist = []
-        search_by_timetime = input("Would you like to generate a setlist based on the length of your show? (y: yes, n: no) ")
-        if search_by_timetime == 'y':
-            time = int(input("Enter length of your show in seconds: "))
-            start_time = 0
-            np.random.shuffle(song_list)
-            for song in song_list:
-                name,length,srange,style,group,show = song
-                if (int(length) + start_time) <= time:
-                    setlist.append(song)
-                    start_time = start_time + int(length)
-        setlist = np.array(setlist)
-        search_by_genre = input("Would you like to consider genre when building your setlist? (y:yes, n: no) ")
-        if search_by_genre == 'y':
-            print("These are the possible genres: 1:Jazz, 2:R&B, 3:Operatic, 4:Folk, 5:Contemporary")
-            genre_1 = input("Enter a genre (number): ")
-        if genre_1 == '1':
-            index = np.where(song_list == genre_1)
-            song_list = song_list[index[0], :]
-        if genre_1 == '2':
-            index = np.where(song_list == genre_1)
-            song_list = song_list[index[0], :]
-        if genre_1 == '3':
-            index = np.where(song_list == genre_1)
-            song_list = song_list[index[0], :]
-        if genre_1 == '4':
-            index = np.where(song_list == genre_1)
-            song_list = song_list[index[0], :]
-        if genre_1 == '5':
-            index = np.where(song_list == genre_1)
-            song_list = song_list[index[0], :]
-    
-        search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y:yes, n: no) ")
-        if search_by_singer_ranges == 'y':
-            '''return setlist'''
-        print(song_list)
-        print (setlist)
-        return (setlist)
                     
     def run_generator(self):
         ''' A function to run the generator based on user input. 
@@ -159,7 +113,7 @@ class generator():
             if user_action == '4':
                 generator.add_singer()
             if user_action == '5':
-                generator.get_user_input(self)
+                Analysis.get_user_input(self)
             if user_action == '6':
                 stop_generator = 0
                 
