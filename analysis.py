@@ -107,10 +107,4 @@ class Analysis():
             input: show length
             returns: song list'''
         
-    def get_user_input(self):
-        ''' A function to get user input on what they are
-            aiming to find by using this generator
-            
-            input: nothing
-            returns: nothing'''
-        return
+
