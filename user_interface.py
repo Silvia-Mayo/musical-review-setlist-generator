@@ -92,9 +92,28 @@ class generator():
                 if (int(length) + start_time) <= time:
                     setlist.append(song)
                     start_time = start_time + int(length)
-                else: break
         setlist = np.array(setlist)
-        search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y:yes, n: no)")
+        search_by_genre = input("Would you like to consider genre when building your setlist? (y:yes, n: no) ")
+        if search_by_genre == 'y':
+            print("These are the possible genres: 1:Jazz, 2:R&B, 3:Operatic, 4:Folk, 5:Contemporary")
+            genre_1 = input("Enter a genre (number): ")
+        if genre_1 == '1':
+            index = np.where(song_list == genre_1)
+            song_list = song_list[index[0], :]
+        if genre_1 == '2':
+            index = np.where(song_list == genre_1)
+            song_list = song_list[index[0], :]
+        if genre_1 == '3':
+            index = np.where(song_list == genre_1)
+            song_list = song_list[index[0], :]
+        if genre_1 == '4':
+            index = np.where(song_list == genre_1)
+            song_list = song_list[index[0], :]
+        if genre_1 == '5':
+            index = np.where(song_list == genre_1)
+            song_list = song_list[index[0], :]
+    
+        search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y:yes, n: no) ")
         if search_by_singer_ranges == 'y':
             '''return setlist'''
         print(song_list)
