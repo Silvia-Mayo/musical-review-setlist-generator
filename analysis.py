@@ -108,3 +108,30 @@ class Analysis():
             returns: song list'''
         
 
+
+    def get_user_input(self):
+        ''' A function to get user input on what they are
+            aiming to find by using this generator
+            
+            input: nothing
+            returns: nothing'''
+        song_list = song.read_database('MT_Database.csv')
+        setlist = []
+        search_by_timetime = input("Would you like to generate a setlist based on the length of your show? (y: yes, n: no) ")
+        if search_by_timetime == 'y':
+            time = int(input("Enter length of your show in seconds: "))
+            start_time = 0
+            np.random.shuffle(song_list)
+            for song in song_list:
+                name,length,srange,style,group,show = song
+                if (int(length) + start_time) <= time:
+                    setlist.append(song)
+                    start_time = start_time + int(length)
+                else: break
+        setlist = np.array(setlist)
+        search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y:yes, n: no)")
+        if search_by_singer_ranges == 'y':
+            '''return setlist'''
+        print(song_list)
+        print (setlist)
+        return (setlist)

@@ -73,6 +73,33 @@ class generator():
         result = song_list[index[0], :]
         print(result)
         return result
+    
+    def get_user_input(self):
+        ''' A function to get user input on what they are
+            aiming to find by using this generator
+            
+            input: nothing
+            returns: nothing'''
+        song_list = song.read_database('MT_Database.csv')
+        setlist = []
+        search_by_timetime = input("Would you like to generate a setlist based on the length of your show? (y: yes, n: no) ")
+        if search_by_timetime == 'y':
+            time = int(input("Enter length of your show in seconds: "))
+            start_time = 0
+            np.random.shuffle(song_list)
+            for song in song_list:
+                name,length,srange,style,group,show = song
+                if (int(length) + start_time) <= time:
+                    setlist.append(song)
+                    start_time = start_time + int(length)
+                else: break
+        setlist = np.array(setlist)
+        search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y:yes, n: no)")
+        if search_by_singer_ranges == 'y':
+            '''return setlist'''
+        print(song_list)
+        print (setlist)
+        return (setlist)
                     
     def run_generator(self):
         ''' A function to run the generator based on user input. 
@@ -113,9 +140,7 @@ class generator():
             if user_action == '4':
                 generator.add_singer()
             if user_action == '5':
-                a = Analysis()
-                user_prefs = a.get_user_input()
-                a.search_by_user_prefs(user_prefs)
+                generator.get_user_input(self)
             if user_action == '6':
                 stop_generator = 0
                 
