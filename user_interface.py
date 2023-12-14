@@ -133,7 +133,7 @@ class generator():
                 print("4: All non-group numbers first")
                 print("5: Alphabetically by musical")
                 sort_by = input("Enter a number: ")
-                self.a.sort_songs(self, sort_by)
+                Analysis.sort_songs(self, sort_by)
             elif user_action == '3':
                 self.a.add_song(self)
             elif user_action == '4':
