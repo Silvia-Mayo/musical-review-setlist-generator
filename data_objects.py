@@ -73,6 +73,15 @@ class singer():
             
             input: nothing
             returns: nothing'''
+        print("The current name is:", self.name)
+        new_name = input("Type the new name (to keep the current name, just press Enter): ")
+        if new_name:
+            self.name = new_name
+        print("The current range is:", self.lohi)
+        new_range = input("Type the new range (to keep the current range, just press Enter): ")
+        if new_range:
+            self.lohi = new_range
+            self.voice_range = note_range(self.lohi)
         return
             
     def display_singer_profile(self):
