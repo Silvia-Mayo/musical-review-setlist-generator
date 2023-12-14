@@ -68,11 +68,10 @@ class singer():
         self.voice_range = note_range(lohi)
         
     def update_singer_profile(self):
-        ''' A function to allow the user to make alterations to the singer profile
-            that they are searching for.
+        ''' A function to allow the user to make alterations to a singer profile
             
             input: nothing
-            returns: nothing'''
+            returns: list of singer name, range, and object'''
         print("The current name is:", self.name)
         new_name = input("Type the new name (to keep the current name, just press Enter): ")
         if new_name:
@@ -82,7 +81,7 @@ class singer():
         if new_range:
             self.lohi = new_range
             self.voice_range = note_range(self.lohi)
-        return
+        return [self.name, self.lohi, self]
             
     def display_singer_profile(self):
         ''' A function to display a specific singer profile.
