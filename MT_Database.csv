@@ -232,54 +232,54 @@ Simple Joys|152|['']|Jazz|False|Pippin
 Sit Down You're Rockin' the Boat|177|['']|Jazz|True|Guys and Dolls
 Sixteen Going on Seventeen|200|['']|Folk|False|The Sound of Music
 Skid Row|257|['']|Rock|True|Little Shop of Horrors
-So Much Better|209|['']|||Legally Blonde
-Some Enchanted Evening|181|['']|||South Pacific
-Someone Else's Story|219|['']|||Chess
-Someone Is Waiting|173|['']|||Company
-Someone Like You|226|['']|||Jekyll & Hyde
-Something Good|199|['']||False|The Sound of Music
-Somewhere That's Green|235|['']||False|Little Shop of Horrors
-The Song of Purple Summer|208|['']||True|Spring Awakening
-Sonya Alone|247|['']||False|Natasha, Pierre & the Great Comet of 1812
-Sonya & Natasha|252|['']||False|Natasha, Pierre & the Great Comet of 1812
-Sorry-Grateful|210|['']|||Company
-The Sound of Music|133|['']|||The Sound of Music
-Spread a Little Sunshine|183|['']|||Pippin
-Stars|177|['']||False|Les Miserables
-Stepsisters' Lament|83|['']||False|Cinderella
-Still Hurting|335|['']||False|The Last Five Years
-Suddenly Seymour|208|['']|||Little Shop of Horrors
-A Summer in Ohio|245|['']||False|The Last Five Years
-Summer Nights|208|['']|||Grease
-Sunrise|248|['']|||In the Heights
-Sunrise, Sunset|231|['']|||Fiddler on the Roof
-Superstar|238|['']|||Jesus Christ Superstar
-The Surrey with the Fringe on Top|293|['']|||Oklahoma!
-Take Back Your Mink|320|['']|||Guys and Dolls
-Take Me or Leave Me|223|['']|||Rent
-Ten Minutes Ago|172|['']|||Cinderella
-That Would Be Enough|178|['']||False|Hamilton
-There Are Worse Things I Could Do|172|['']|||Grease
-There's No Business Like Show Business|307|['']|||Annie Get Your Gun
-Think of Me|249|['']|||The Phantom of the Opera
-Thoroughly Modern Millie|177|['']|||Thoroughly Modern Millie
-Those Canaan Days|273|['']|||Joseph and the Amazing Technicolor Dreamcoat
-Till There Was You|165|['']|||The Music Man
-To Life|374|['']|||Fiddler on the Roof
+So Much Better|209|['']|Pop|False|Legally Blonde
+Some Enchanted Evening|181|['']|Jazz|False|South Pacific
+Someone Else's Story|219|['']|Pop|False|Chess
+Someone Is Waiting|173|['']|Pop|False|Company
+Someone Like You|226|['']|Jazz|False|Jekyll & Hyde
+Something Good|199|['']|Folk|False|The Sound of Music
+Somewhere That's Green|235|['']|Jazz|False|Little Shop of Horrors
+The Song of Purple Summer|208|['']|Pop|True|Spring Awakening
+Sonya Alone|247|['']|Folk|False|Natasha, Pierre & the Great Comet of 1812
+Sonya & Natasha|252|['']|Folk|False|Natasha, Pierre & the Great Comet of 1812
+Sorry-Grateful|210|['']|Pop|True|Company
+The Sound of Music|133|['']|Folk|False|The Sound of Music
+Spread a Little Sunshine|183|['']|Folk|False|Pippin
+Stars|177|['']|Jazz|False|Les Miserables
+Stepsisters' Lament|83|['']|Pop|False|Cinderella
+Still Hurting|335|['']|Pop|False|The Last Five Years
+Suddenly Seymour|208|['']|Jazz|True|Little Shop of Horrors
+A Summer in Ohio|245|['']|Pop|False|The Last Five Years
+Summer Nights|208|['']|Pop|True|Grease
+Sunrise|248|['']|Pop|True|In the Heights
+Sunrise, Sunset|231|['']|Folk|True|Fiddler on the Roof
+Superstar|238|['']|Rock|False|Jesus Christ Superstar
+The Surrey with the Fringe on Top|293|['']|Folk|False|Oklahoma!
+Take Back Your Mink|320|['']|Jazz|False|Guys and Dolls
+Take Me or Leave Me|223|['']|Rock|True|Rent
+Ten Minutes Ago|172|['']|Pop|True|Cinderella
+That Would Be Enough|178|['']|Pop|False|Hamilton
+There Are Worse Things I Could Do|172|['']|Pop|False|Grease
+There's No Business Like Show Business|307|['']|Pop|True|Annie Get Your Gun
+Think of Me|249|['']|Operatic|False|The Phantom of the Opera
+Thoroughly Modern Millie|177|['']|Pop|False|Thoroughly Modern Millie
+Those Canaan Days|273|['']|Jazz|True|Joseph and the Amazing Technicolor Dreamcoat
+Till There Was You|165|['']|Jazz|True|The Music Man
+To Life|374|['']|Folk|True|Fiddler on the Roof
 Tomorrow|127|['']|Pop|False|Annie
-Tradition|425|['']||True|Fiddler on the Roof
-Try to Remember|167|['']|||The Fantasticks
-Turn Back, O Man|255|['']|||Godspell
-Wait|139|['']||False|Sweeney Todd
-Wait for It|193|['']|||Hamilton
-Wait for Me|214|['']|||Hadestown
-Washington on Your Side|181|['']|||Hamilton
-Way Down Hadestown|300|['']||True|Hadestown
-We Can Do It|215|['']|||The Producers
-We Go Together|179|['']|||Grease
-We Raise Our Cups|125|['']|||Hadestown
-Wedding Song|213|['']|||Hadestown
-Welcome to the 60's|237|['']|||Hairspray
+Tradition|425|['']|Folk|True|Fiddler on the Roof
+Try to Remember|167|['']|Pop|False|The Fantasticks
+Turn Back, O Man|255|['']|Rock|False|Godspell
+Wait|139|['']|Pop|False|Sweeney Todd
+Wait for It|193|['']|Pop|False|Hamilton
+Wait for Me|214|['']|Folk|True|Hadestown
+Washington on Your Side|181|['']|Pop|True|Hamilton
+Way Down Hadestown|300|['']|Folk|True|Hadestown
+We Can Do It|215|['']|Pop|True|The Producers
+We Go Together|179|['']|Jazz|True|Grease
+We Raise Our Cups|125|['']|Folk|True|Hadestown
+Wedding Song|213|['']|Folk|True|Hadestown
+Welcome to the 60's|237|['']|Pop|True|Hairspray
 What Do I Need With Love|183|['']|Jazz|False|Thoroughly Modern Millie
 What I Did for Love|226|['']|Operatic|True|A Chorus Line
 What Is This Feeling?|212|['']|Pop|True|Wicked
