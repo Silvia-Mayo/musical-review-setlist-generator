@@ -40,15 +40,16 @@ class generator():
             returns: nothing
         '''
         some_singers = self.a.search_for_singer(input("Please type in a keyword to search for the singer: "))
-        if some_singers.shape[0] == 1:
-            singer_to_modify = some_singers[0][-1]
+        if len(some_singers) == 1:
+            singer_to_modify = some_singers[0]
         else:
             for one_singer in some_singers:
-                print(one_singer)
+                print(one_singer[:2])
                 if input("Is this the singer you want to modify? (y: yes, n: no) ") == 'y':
                     singer_to_modify = one_singer
                     break
-        singer_to_modify.update_singer_profile()
+        self.a.singers.remove(singer_to_modify)
+        self.a.singers.append(singer_to_modify[-1].update_singer_profile())
         return
     
     def display_singers(self):
