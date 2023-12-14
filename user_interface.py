@@ -67,7 +67,7 @@ class generator():
             input: keyword (to search all fields), name, range
             return: np.array of songs matching the keyword
         '''
-        song_list = song.read_database('MT_Database.csv')
+        song_list = song.read_database('Test2_MT_Database.csv')
         index = np.where(song_list == keyword)
         result = song_list[index[0], :]
         print(result)
@@ -170,18 +170,18 @@ if __name__ == '__main__':
 
         print("Test 1: \n")
         test1 = generator.user_search(' Hadestown')
-        test1_expected = np.array([["All I've Ever Known " ,' 243 ' ,' Hadestown'],
-        ['Epic III ' ,' 351 ' ,' Hadestown'],
-        ['Flowers ' ,' 211 ' ,' Hadestown'],
-        ['Hey, Little Songbird ' ,' 212 ' ,' Hadestown'],
-        ["Livin' It Up on Top " ,' 329 ', ' Hadestown'],
-        ['Our Lady of the Underground ' ,' 324 ' ,' Hadestown'],
-        ['Wait for Me ' ,' 214 ' ,' Hadestown'],
-        ['Way Down Hadestown ' ,' 300 ' ,' Hadestown'],
-        ['We Raise Our Cups ' ,' 125 ' ,' Hadestown'],
-        ['Wedding Song ' ,' 213 ' ,' Hadestown'],
-        ['When the Chips Are Down ' ,' 134 ', ' Hadestown'],
-        ['Why We Build the Wall ', ' 240 ' ,' Hadestown']])
+        test1_expected = np.array([["All I've Ever Known",'243','Hadestown'],
+          ['Epic III','351','Hadestown'],
+          ['Flowers','211','Hadestown'],
+          ['Hey, Little Songbird','212','Hadestown'],
+          ["Livin' It Up on Top",'329','Hadestown'],
+          ['Our Lady of the Underground','324','Hadestown'],
+          ['Wait for Me','214','Hadestown'],
+          ['Way Down Hadestown','300','Hadestown'],
+          ['We Raise Our Cups','125','Hadestown'],
+          ['Wedding Song','213','Hadestown'],
+          ['When the Chips Are Down','134','Hadestown'],
+          ['Why We Build the Wall','240','Hadestown']])
         print("\n")
 
         print("test 1 expected = ", test1_expected)
@@ -192,8 +192,8 @@ if __name__ == '__main__':
         
         print("Test 2: \n")
         test2 = generator.user_search(' 140 ')
-        test2_expected = np.array([['Angel of Music ' ,' 140 ', ' The Phantom of the Opera'],
-                                ['My Favorite Things ' ,' 140 ' ,' The Sound of Music']])
+        test2_expected = np.array([['Angel of Music' ,'140', 'The Phantom of the Opera'],
+                                ['My Favorite Things' ,'140' ,'The Sound of Music']])
         print("\n")
 
         print("test 2 expected = ", test2_expected)
@@ -204,7 +204,7 @@ if __name__ == '__main__':
         print("\n")
         
         test3 = generator.user_search('Agony ')
-        test3_expected = np.array([['Agony ' ,' 147 ', ' Into the Woods']])
+        test3_expected = np.array([['Agony' ,'147', 'Into the Woods']])
         print(test3_expected)
         if np.array_equal(test3, test3_expected):
             print("test 3 passed!")
