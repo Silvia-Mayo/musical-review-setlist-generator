@@ -88,7 +88,7 @@ class generator():
         
         search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y: yes, n: no) ")
         if search_by_singer_ranges == 'y':
-            '''setlist = Analysis.songs_for_show_by_genre_singer_profile(self)'''
+            '''setlist = Analysis.songs_for_show_by_singer_profile(self)'''
         
         search_by_timetime = input("Would you like to generate a setlist based on the length of your show? (y: yes, n: no) ")
         if search_by_timetime == 'y':
@@ -135,7 +135,7 @@ class generator():
                 sort_by = input("Enter a number: ")
                 Analysis.sort_songs(self, sort_by)
             elif user_action == '3':
-                self.a.add_song(self)
+                Analysis.add_song(self)
             elif user_action == '4':
                 generator.add_singer(self)
             elif user_action == '5':
