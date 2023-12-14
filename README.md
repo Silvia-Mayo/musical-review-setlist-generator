@@ -17,3 +17,9 @@ A musical review is a performance of many songs, usually from the musical theate
 Users: Any director or participant in a musical review looking to craft a show. A general background in musical theater or understanding of the content is helpful to comprehend the results. Access to sheet music and musicians or instrumentals is often fundamental for putting together a show, but not strictly necessary to benefit from the software.
 
 Stakeholders: Sheet music distributors, composers/lyricists, artistic directors, audiences, musical theater programs or schools, and voice coaches are just some of the people who could concern themselves with this product. More generally, this could be helpful for anyone who is regularly searching for the appropriate music, whether this be for the user themselves, or for a customer providing this service for another population.
+
+## How To Run The Musical Review Setlist Generator
+
+1. Download all the files in this repository
+2. Navigate to the file user_interface.py and run the file.
+3. You will be prompted with a series of options on how to use this setlist generator. Based on your choices, the generator will act accordingly. This project is text-based and all user interaction occurs in the terminal.
