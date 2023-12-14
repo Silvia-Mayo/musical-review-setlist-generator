@@ -20,7 +20,7 @@ class Analysis():
         
             input: nothing
             returns: nothing'''
-        self.singers = np.array([])
+        self.singers = np.array([[]])
         return
         
     def sort_songs(self, key):
@@ -29,7 +29,9 @@ class Analysis():
             input: key for the song sorting
             returns: nothing'''
         np_songs = song.read_database('Test2_MT_Database.csv')
-        column_sort = int(key) - 1
+        column_sort = int(key)
+        if key in '12':
+            column_sort -= 1
         sorted_songs = np.argsort(np_songs[:, column_sort])
         print (np_songs[sorted_songs])
         return (np_songs[sorted_songs])
@@ -53,7 +55,7 @@ class Analysis():
             song_ranges.append(v_range)
             v_range = input("Type a vocal range (the lowest and highest notes separated by a hyphen)\
                             for each soloist in the song. Press 'Enter' when done: ")
-        song_genre = input("What genre best describes this song?\nPlease choose from 'Folk', 'Jazz', 'Operatic', 'Pop-Rock', and 'R&B': ")
+        song_genre = input("What genre best describes this song?\nPlease choose from 'Folk', 'Jazz', 'Operatic', 'Pop', 'Rock', and 'R&B': ")
         song_is_group = bool(int(input("Is this song a group number (is there back-up singing)? Type 1 for yes and 0 for no: ")))
         song_musical = input("Enter the name of the musical this song is in: ")
         new_entry = [song_name + "|" + str(song_length) + "|" + str(song_ranges) + "|" + song_genre + "|" + str(song_is_group) + "|" + song_musical]
@@ -68,15 +70,26 @@ class Analysis():
         
             input: singer to be added
             returns: nothing'''
-        self.singers = np.append(self.singers, [one_singer.name, one_singer.lohi, one_singer])
+        self.singers = np.append(self.singers, [[one_singer.name, one_singer.lohi, one_singer]])
         return
-
-    def sort_singers(self, key):
-        ''' A function to sort the singers based on user input (in place)
         
-            input: key for the singer sorting
+    def display_singers(self):
+        ''' A function to display all the singers
+        
+            input: nothing
             returns: nothing'''
+        print(self.singers)
         return
+    
+    def search_for_singer(self, keyword):
+        ''' A function to allow the user to search for any singer in the database by name.
+
+            input: keyword
+            return: np.array of singers matching the keyword
+        '''
+        result = self.singers[keyword in self.singers[0]]
+        print(result)
+        return result
         
     def songs_for_show_by_singer_profile(self, one_singer: singer):
         '''A function that takes in a singer profile and returns a
@@ -92,24 +105,21 @@ class Analysis():
             input: user_prefs to be analyzed
             returns: song list'''
 
-        print("These are the possible genres: 1:Jazz, 2:R&B, 3:Operatic, 4:Folk, 5:Contemporary")
+        print("These are the possible genres:\n1: Folk\n2: Jazz\n3: Operatic\n4: Pop\n5: Rock\n6: R&B")
         genre = input("Enter a genre (number): ")
         if genre == '1':
-            index = np.where(song_list == 'Jazz')
-            setlist = song_list[index[0], :]
-        if genre == '2':
-            index = np.where(song_list == 'R&B')
-            setlist = song_list[index[0], :]
-        if genre == '3':
-            index = np.where(song_list == 'Operatic')
-            setlist = song_list[index[0], :]
-        if genre == '4':
             index = np.where(song_list == 'Folk')
-            setlist = song_list[index[0], :]
-        if genre == '5':
-            index = np.where(song_list == 'Contemporary')
-            setlist = song_list[index[0], :]
-        setlist = np.array(setlist)
+        elif genre == '2':
+            index = np.where(song_list == 'Jazz')
+        elif genre == '3':
+            index = np.where(song_list == 'Operatic')
+        elif genre == '4':
+            index = np.where(song_list == 'Pop')
+        elif genre == '5':
+            index = np.where(song_list == 'Rock')
+        elif genre == '6':
+            index = np.where(song_list == 'R&B')
+        setlist = np.array(song_list[index[0], :])
         return setlist
             
     def search_by_group_number(self, number: int):
