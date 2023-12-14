@@ -20,24 +20,9 @@ class generator():
             input: nothing
             returns: nothing
         '''
+        self.a = Analysis()
 
-    def add_song():
-        ''' A function to add a song to the database.
-        
-            input: nothing
-            returns: nothing
-        '''
-        name = input("Enter the name of the song: ")
-        length = input("Enter the length of the song in seconds: ")
-        lohi = input("Enter the voice range of the song: ")
-        genre = input("Enter the genre of this song: ")
-        show_title = input("Enter the show that this song is in: ")
-        a = Analysis()
-        a.add_song(song(name = name, length = int(length), lohi = lohi, genre = genre, show_title = show_title))
-        return
-    
-
-    def add_singer():
+    def add_singer(self):
         ''' A function to add a singer profile to the database.
         
             input: nothing
@@ -45,12 +30,37 @@ class generator():
         '''
         name = input("Enter the name of the singer: ")
         lohi = input("Enter their voice range: ")
-        a = Analysis()
-        a.add_singer(singer(name = name, lohi = lohi))
+        self.a.add_singer(singer(name = name, lohi = lohi))
         return
-      
-    '''def user_search(self, keyword, kind = 'both', name = '', range = ''):'''
-  
+    
+    def modify_singer(self):
+        ''' A function to modify an existing singer profile
+
+            input: nothing
+            returns: nothing
+        '''
+        some_singers = self.a.search_for_singer(input("Please type in a keyword to search for the singer: "))
+        if some_singers.shape[0] == 1:
+            singer_to_modify = some_singers[0][-1]
+        else:
+            for one_singer in some_singers:
+                print(one_singer)
+                if input("Is this the singer you want to modify? (y: yes, n: no) ") == 'y':
+                    singer_to_modify = one_singer
+                    break
+        singer_to_modify.update_singer_profile()
+        return
+    
+    def display_singers(self):
+        ''' A function to display all the current singers
+        
+            input: nothing
+            returns: nothing
+        '''
+        self.a.display_singers()
+        print('\n')
+        return
+        
     def user_search(keyword):
         ''' A function to allow the user to search for any song in the database.
 
@@ -71,17 +81,17 @@ class generator():
             returns: nothing'''
         song_list = song.read_database('Test2_MT_Database.csv')
         
-        search_by_genre = input("Would you like to consider genre when building your setlist? (y:yes, n: no) ")
+        search_by_genre = input("Would you like to consider genre when building your setlist? (y: yes, n: no) ")
         if search_by_genre == 'y':
-            setlist = Analysis.songs_for_show_by_genre(self, song_list)
+            setlist = self.a.songs_for_show_by_genre(song_list)
         
-        search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y:yes, n: no) ")
+        search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y: yes, n: no) ")
         if search_by_singer_ranges == 'y':
             '''setlist = Analysis.songs_for_show_by_genre_singer_profile(self)'''
         
         search_by_timetime = input("Would you like to generate a setlist based on the length of your show? (y: yes, n: no) ")
         if search_by_timetime == 'y':
-            setlist = Analysis.songs_for_show_by_time(self, setlist)
+            setlist = self.a.songs_for_show_by_time(setlist)
         print (setlist)
         return (setlist)
                     
@@ -104,28 +114,36 @@ class generator():
             print("2: Browse all songs")
             print("3: Add a new song")
             print("4: Add a new singer profile")
-            print("5: Generate setlist based on my prefs")
-            print("6: Quit")
+            print("5: Modify an existing singer profile")
+            print("6: Display all the current singers")
+            print("7: Generate setlist based on my prefs")
+            print("8: Quit")
             print("\n")
             
             user_action = input("Enter a number: ")
             if user_action == '1':
                 key = input("Search for a song by singer, group number, show: ")
                 generator.user_search(key)
-            if user_action == '2':
+            elif user_action == '2':
                 print("How would you like to display the songs?")
                 print("1: Alphabetically by song")
                 print("2: From shortest to longest by length")
-                print("3: Alphabetically by musical")
+                print("3: Alphabetically by genre")
+                print("4: All non-group numbers first")
+                print("5: Alphabetically by musical")
                 sort_by = input("Enter a number: ")
-                Analysis.sort_songs(self,sort_by)
-            if user_action == '3':
-                Analysis.add_song(self)
-            if user_action == '4':
-                generator.add_singer()
-            if user_action == '5':
+                self.a.sort_songs(self, sort_by)
+            elif user_action == '3':
+                self.a.add_song(self)
+            elif user_action == '4':
+                generator.add_singer(self)
+            elif user_action == '5':
+                generator.modify_singer(self)
+            elif user_action == '6':
+                generator.display_singers(self)
+            elif user_action == '7':
                 generator.get_user_input(self)
-            if user_action == '6':
+            elif user_action == '8':
                 stop_generator = 0
                 
 if __name__ == '__main__':
