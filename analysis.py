@@ -20,7 +20,7 @@ class Analysis():
         
             input: nothing
             returns: nothing'''
-        self.singers = np.array([[]])
+        self.singers = []
         return
         
     def sort_songs(self, key):
@@ -70,7 +70,7 @@ class Analysis():
         
             input: singer to be added
             returns: nothing'''
-        self.singers = np.append(self.singers, [[one_singer.name, one_singer.lohi, one_singer]])
+        self.singers.append([one_singer.name, one_singer.lohi, one_singer])
         return
         
     def display_singers(self):
@@ -78,7 +78,8 @@ class Analysis():
         
             input: nothing
             returns: nothing'''
-        print(self.singers)
+        for row in self.singers:
+            print(row[0] + ':', row[1])
         return
     
     def search_for_singer(self, keyword):
@@ -87,8 +88,10 @@ class Analysis():
             input: keyword
             return: np.array of singers matching the keyword
         '''
-        result = self.singers[keyword in self.singers[0]]
-        print(result)
+        result = []
+        for row in self.singers:
+            if keyword in row[0]:
+                result.append(row)
         return result
         
     def songs_for_show_by_singer_profile(self, one_singer: singer):
