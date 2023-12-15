@@ -10,7 +10,7 @@ Along Came Bialy|416|['Ab3-Eb5', 'Ab3-Gb5', 'Ab3-Gb5', 'Bb2-Eb4']|Jazz|True|The 
 Always True to You in My Fashion|314|['A3-A5', 'A3-C#4']|Jazz|False|Kiss Me, Kate
 And I Am Telling You I'm Not Going|244|['D4-F5']|R&B|False|Dreamgirls
 Angel of Music|140|['C4-F5', 'C4-D5']|Operatic|False|The Phantom of the Opera
-Another Hundred People|220|['C4-D#5']||False|Company
+Another Hundred People|220|['C4-D#5']|Pop|False|Company
 Another Suitcase in Another Hall|177|['A3-E5']|Rock|True|Evita
 Anthem|183|['C#3-G4']|Rock|False|Chess
 Any Dream Will Do|234|['C3-F4']|Rock|True|Joseph and the Amazing Technicolor Dreamcoat
@@ -23,7 +23,7 @@ Astonishing|275|['G#3-Eb5']|Pop|False|Little Women
 At the Ballet|349|['G#3-E5', 'G3-C5', 'E3-Bb4']|Rock|False|A Chorus Line
 Beauty School Dropout|239|['Bb2-C#4']|Rock|True|Grease
 Before the Parade Passes By|294|['G3-C#5']|Jazz|True|Hello, Dolly!
-Being Alive|306|['F3-G#4']||False|Company
+Being Alive|306|['F3-G#4']|Pop|False|Company
 Big Spender|217|['F3-Cb5']|Jazz|True|Sweet Charity
 Breathe|404|['F3-G5']|Pop|True|In the Heights
 Bring Him Home|197|['E3-A4']|Operatic|False|Les Miserables
@@ -33,11 +33,11 @@ Buenos Aires|291|['E3-F5']|Jazz|False|Evita
 Burn|225|['A3-D5']|Pop|False|Hamilton
 A Bushel and a Peck|188|['B3-D5']|Jazz|True|Guys and Dolls
 By The Sea|212|['G#3-E5', 'G#2-A3']|Jazz|False|Sweeney Todd
-Cabaret|211|['']|Jazz|False|Cabaret
-Camelot|150|['']|Operatic|True|Camelot
-Candy Store|172|['']|Pop|False|Heathers
-Charming|267|['']|Pop|False|Natasha, Pierre & the Great Comet of 1812
-Children Will Listen|102|['']|Jazz|True|Into the Woods
+Cabaret|211|['F3-C5']|Jazz|False|Cabaret
+Camelot|150|['C3-D4']|Operatic|False|Camelot
+Candy Store|172|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Pop|False|Heathers
+Charming|267|['F3-F5', 'Bb3-Bb4']|Pop|False|Natasha, Pierre & the Great Comet of 1812
+Children Will Listen|102|['A3-F#5']|Operatic|True|Into the Woods
 Class|188|['']||False|Chicago
 Climb Ev'ry Mountain|138|['']|True|False|The Sound of Music
 Climbing Uphill|209|['']||False|The Last Five Years
