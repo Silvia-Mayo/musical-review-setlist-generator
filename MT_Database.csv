@@ -17,7 +17,7 @@ Any Dream Will Do|234|['C3-F4']|Rock|True|Joseph and the Amazing Technicolor Dre
 Anything Goes|348|['G3-D5']|Jazz|True|Anything Goes
 Anything You Can Do|197|['Bb3-Bb5', 'F2-F4']|Jazz|False|Annie Get Your Gun
 As if We Never Said Goodbye|376|['G3-C5']|Pop|False|Sunset Boulevard
-As Long as He Needs Me|196|['E3-B4']||False|Oliver!
+As Long as He Needs Me|196|['E3-B4']|Folk|False|Oliver!
 As Long as You're Mine|225|['Bb3-D5', 'G3-Bb4']|Pop|False|Wicked
 Astonishing|275|['G#3-Eb5']|Pop|False|Little Women
 At the Ballet|349|['G#3-E5', 'G3-C5', 'E3-Bb4']|Rock|False|A Chorus Line
@@ -38,68 +38,68 @@ Camelot|150|['C3-D4']|Operatic|False|Camelot
 Candy Store|172|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Pop|False|Heathers
 Charming|267|['F3-F5', 'Bb3-Bb4']|Pop|False|Natasha, Pierre & the Great Comet of 1812
 Children Will Listen|102|['A3-F#5']|Operatic|True|Into the Woods
-Class|188|['']||False|Chicago
+Class|188|['']|Jazz|False|Chicago
 Climb Ev'ry Mountain|138|['']|True|False|The Sound of Music
-Climbing Uphill|209|['']||False|The Last Five Years
-Close Every Door|227|['']||False|Joseph and the Amazing Technicolor Dreamcoat
-Comedy Tonight|300|['']||True|A Funny Thing Happened on the Way to the Forum
-Company|347|['']||True|Company
-Consider Yourself|340|['']||True|Oliver!
+Climbing Uphill|209|['']|Pop|False|The Last Five Years
+Close Every Door|227|['']|Pop|False|Joseph and the Amazing Technicolor Dreamcoat
+Comedy Tonight|300|['']|Pop|True|A Funny Thing Happened on the Way to the Forum
+Company|347|['']|Jazz|True|Company
+Consider Yourself|340|['']|Folk|True|Oliver!
 Corner of the Sky|176|['']|Pop|False|Pippin
 Crazier Than You|171|['']|Pop|False|The Addams Family
-Dance: Ten; Looks: Three|171|['']||False|A Chorus Line
+Dance: Ten; Looks: Three|171|['']|Pop|False|A Chorus Line
 Dancing Through Life|457|['']|Pop|True|Wicked
-Day by Day|204|['']||True|Godspell
+Day by Day|204|['']|True|Rock|Godspell
 Dead Girl Walking|204|['']|Pop|False|Heathers
 Dear Theodosia|304|['']|Pop|False|Hamilton
 Defying Gravity|353|['']|Pop|True|Wicked
 Dentist!|148|['']|Rock|True|Little Shop of Horrors
 Diamonds Are a Girl's Best Friend|212|['']|Jazz|False|Gentlemen Prefer Blondes
-Do I Love You Because You're Beautiful?|171|['']||False|Cinderella
-Do You Hear the People Sing?|136|['']||True|Les Miserables
-Do You Love Me?|193|['']||False|Fiddler on the Roof
-Don't Cry for Me Argentina|351|['']||False|Evita
+Do I Love You Because You're Beautiful?|171|['']|Pop|False|Cinderella
+Do You Hear the People Sing?|136|['']|Operatic|True|Les Miserables
+Do You Love Me?|193|['']|Folk|False|Fiddler on the Roof
+Don't Cry for Me Argentina|351|['']|Pop|False|Evita
 Don't Rain on My Parade|164|['']|Jazz|False|Funny Girl
 Don't Tell Mama|241|['']|Jazz|True|Cabaret
-Do-Re-Mi|335|['']||True|The Sound of Music
+Do-Re-Mi|335|['']|Folk|True|The Sound of Music
 Dust and Ashes|384|['']|Pop|True|Natasha, Pierre & the Great Comet of 1812
 Easy Street|198|['']|Pop|False|Annie
-Edelweiss|138|['']||True|The Sound of Music
-Elaborate Lives|269|['']||Trye|Aida
-Electricity|353|['']||False|Billy Elliot
-Empty Chairs at Empty Tables|168|['']||False|Les Miserables
-Enough|158|['']||False|In the Heights
+Edelweiss|138|['']|Folk|True|The Sound of Music
+Elaborate Lives|269|['']|Pop|Trye|Aida
+Electricity|353|['']|Pop|False|Billy Elliot
+Empty Chairs at Empty Tables|168|['']|Operatic|False|Les Miserables
+Enough|158|['']|Pop|False|In the Heights
 Epic III|351|['']|Folk|True|Hadestown
 Everything I Know|236|['']|Pop|False|In the Heights
-Everything's Coming Up Roses|171|['']||False|Gypsy
-Extraordinary|158|['']||False|Pippin
+Everything's Coming Up Roses|171|['']|Pop|False|Gypsy
+Extraordinary|158|['']|Folk|False|Pippin
 Fight for Me|155|['']|Pop|True|Heathers
 Flowers|211|['']|Folk|False|Hadestown
-Follow Your Heart|287|['']||False|Urinetown
+Follow Your Heart|287|['']|Pop|False|Urinetown
 For Good|306|['']|Pop|False|Wicked
 Forget About the Boy|203|['']|Jazz|True|Thoroughly Modren Millie
 Freeze Your Brain|173|['Db3-G4']|Pop|False|Heathers
-Getting to Know You|212|['']||True|The King and I
-Giants in the Sky|146|['']||False|Into the Woods
+Getting to Know You|212|['']|Pop|True|The King and I
+Giants in the Sky|146|['']|Pop|False|Into the Woods
 Gimme Gimme|214|['']|Jazz|False|Thoroughly Modern Millie
-Glory|354|['']||True|Pippin
-Good Morning, Baltimore|220|['']||True|Hairspray
-Goodnight, My Someone|165|['']||False|The Music Man
+Glory|354|['']|Folk|True|Pippin
+Good Morning, Baltimore|220|['']|Pop|True|Hairspray
+Goodnight, My Someone|165|['']|Jazz|False|The Music Man
 The Great Comet of 1812|302|['']|Pop|True|Natasha, Pierre & the Great Comet of 1812
 Green Finch and Linnet Bird|144|['C4-G5']|Operatic|False|Sweeney Todd
-Grow for Me|150|['']||False|Little Shop of Horrors
-Guys and Dolls|178|['']||True|Guys and Dolls
-Hello, Dolly!|400|['']||True|Hello, Dolly!
+Grow for Me|150|['']|Rock|False|Little Shop of Horrors
+Guys and Dolls|178|['']|Folk|True|Guys and Dolls
+Hello, Dolly!|400|['']|Folk|True|Hello, Dolly!
 Helpless|249|['']|Pop|True|Hamilton
 Hey, Little Songbird|212|['']|Folk|True|Hadestown
 History Has Its Eyes on You|97|['']|Pop|True|Hamilton
-How Are Things in Glocca Morra|178|['']||True|Finian's Rainbow
-How The Other Half Lives|162|['']||False|Thoroughly Modern Millie
+How Are Things in Glocca Morra|178|['']|Operatic|True|Finian's Rainbow
+How The Other Half Lives|162|['']|Pop|False|Thoroughly Modern Millie
 Hundreds of Stories|220|['']|Pop|False|In the Heights
 Hurricane|143|['']|Pop|False|Hamilton
-I Am What I Am|180|['']||False|La Cage Aux Folles
-I Believe in You|240|['']||False|How to Succeed in Business Without Really Trying
-I Cain't Say No!|173|['']||False|Oklahoma!
+I Am What I Am|180|['']|Jazz|False|La Cage Aux Folles
+I Believe in You|240|['']|Operatic|False|How to Succeed in Business Without Really Trying
+I Cain't Say No!|173|['']|Folk|False|Oklahoma!
 I Can Hear the Bells|244|['']|Pop|True|Hairspray
 I Can Do Better Than That|297|['']|Pop|False|The Last Five Years
 I Can Do That|93|['']|Pop|False|A Chorus Line
@@ -175,7 +175,7 @@ Move Towards the Darkness|238|['']|Jazz|False|The Addams Family
 Moving Too Fast|244|['']|Pop|False|The Last Five Years
 The Music and the Mirror|398|['']|Jazz|False|A Chorus Line
 The Music of the Night|341|['']|Operatic|False|The Phantom of the Opera
-My Favorite Things|140|['']Folk|True|The Sound of Music
+My Favorite Things|140|['']|Folk|True|The Sound of Music
 My Junk|145|['']|Rock|True|Spring Awakening
 My Own Best Friend|161|['']|Pop|True|Chicago
 My Shot|333|['']|Pop|True|Hamilton
