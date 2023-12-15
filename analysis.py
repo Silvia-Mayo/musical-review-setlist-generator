@@ -28,7 +28,7 @@ class Analysis():
         
             input: key for the song sorting
             returns: nothing'''
-        np_songs = song.read_database('Test2_MT_Database.csv')
+        np_songs = song.read_database('MT_Database.csv')
         column_sort = int(key)
         if key in '12':
             column_sort -= 1
@@ -40,9 +40,9 @@ class Analysis():
         ''' A function to add a song to the database.
             input: song to be added
             returns: nothing'''
-        file_path = 'Test2_MT_Database.csv'
+        file_path = 'MT_Database.csv'
 
-        with open('Test2_MT_Database.csv', 'r', newline='') as csvfile:
+        with open('MT_Database.csv', 'r', newline='') as csvfile:
                 csv_read = csv.reader(csvfile)
                 existing_data = list(csv_read)
         song_name = input("Enter the song name: ")
