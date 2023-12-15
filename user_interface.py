@@ -68,7 +68,7 @@ class generator():
             input: keyword (to search all fields), name, range
             return: np.array of songs matching the keyword
         '''
-        song_list = song.read_database('Test2_MT_Database.csv')
+        song_list = song.read_database('MT_Database.csv')
         index = np.where(song_list == keyword)
         result = song_list[index[0], :]
         print(result)
@@ -80,7 +80,7 @@ class generator():
             
             input: nothing
             returns: nothing'''
-        song_list = song.read_database('Test2_MT_Database.csv')
+        song_list = song.read_database('MT_Database.csv')
         
         search_by_genre = input("Would you like to consider genre when building your setlist? (y: yes, n: no) ")
         if search_by_genre == 'y':
