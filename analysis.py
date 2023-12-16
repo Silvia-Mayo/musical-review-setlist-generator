@@ -27,7 +27,7 @@ class Analysis():
         ''' A function to sort the songs based on user input (in place)
         
             input: key for the song sorting
-            returns: nothing'''
+            returns: np.array of sorted songs'''
         np_songs = song.read_database('MT_Database.csv')
         column_sort = int(key)
         if key in '12':
@@ -64,6 +64,7 @@ class Analysis():
             csvfile.write('\n')
             writer = csv.writer(csvfile)
             writer.writerow(new_entry)
+        return
         
     def add_singer(self, one_singer: singer):
         ''' A function to add a singer profile to the database.
@@ -94,19 +95,43 @@ class Analysis():
                 result.append(row)
         return result
         
-    def songs_for_show_by_singer_profile(self, one_singer: singer):
-        '''A function that takes in a singer profile and returns a
-           list of songs that are suited for that singer
+    def songs_by_singer_profile(self, song_list, one_singer: singer):
+        ''' A function that takes in a song databaes to choose from and a singer profile
+            and returns a list of songs that are suited for that singer
            
-           input: singer to be analyzed
-           returns: song list'''
-           
-    def songs_for_show_by_genre(self, song_list):
-        ''' A function that takes in user preferences and returns a 
-            list of songs that are suited for that person
+            input: song database to be considered, singer
+            returns: list of songs'''
+        setlist = []
+        for row in song_list:
+            for range_str in eval(row[2]):
+                if one_singer.voice_range.contains_range(note_range(range_str)):
+                    setlist.append(row)
+                    break
+        return setlist
+        
+    def songs_by_singers(self, song_list):
+        ''' A function that returns a list of songs suited to the singer profiles currently added
             
-            input: user_prefs to be analyzed
-            returns: song list'''
+            input: song database to be considered
+            returns: np.array of songs'''
+        if self.singers:
+            setlist = self.songs_by_singer_profile(song_list, self.singers[0][-1])
+            if len(self.singers) > 1:
+                for profile in self.singers[1:]:
+                    for s in self.songs_by_singer_profile(song_list, profile[-1]):
+                        if s[0] not in np.array(setlist):
+                            setlist.append(s)
+        else:
+            setlist = []
+        setlist = np.array(setlist)
+        return setlist
+           
+    def songs_by_genre(self, song_list):
+        ''' A function that takes in a song database to choose from,
+            and asks the user which genre to filter by
+            
+            input: song database to be considered
+            returns: np.array of songs'''
 
         print("These are the possible genres:\n1: Folk\n2: Jazz\n3: Operatic\n4: Pop\n5: Rock\n6: R&B")
         genre = input("Enter a genre (number): ")
@@ -125,20 +150,13 @@ class Analysis():
         setlist = np.array(song_list[index[0], :])
         return setlist
             
-    def search_by_group_number(self, number: int):
-        ''' A function that searches for songs that are suited for a 
-            specific number of people.
-            
-            input: number of people, int
-            returns: song list'''
-            
-    def songs_for_show_by_time(self, setlist):
+    def songs_by_time(self, setlist):
         ''' A function that takes in a show and its length and other
             attributes if necessary and returns a list of songs that
             will fill the allotted time.
             
             input: show length
-            returns: song list'''
+            returns: np.array of songs'''
         time = int(input("Enter length of your show in seconds: "))
         sl = []
         start_time = 0
