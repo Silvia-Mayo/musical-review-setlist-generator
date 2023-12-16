@@ -26,6 +26,7 @@ Stakeholders: Sheet music distributors, composers/lyricists, artistic directors,
 ## Instructions on how to run the project
 1. Navigate to the file user_interface.py and run the file.
 2. You will be prompted with a series of options on how to use this setlist generator. Based on your choices, the generator will act accordingly. This project is text-based and all user interaction occurs in the terminal.
+3. To enter voice ranges correctly, enter two note names, which are letters A through G, followed by a sharp (#) or flat (b) if necessary, with a number for the octave separated by a hyphen. Some examples to get you started include C4-G5, Eb3-F#4, Ab3-Eb, A3-A5, and G#3-E5.
 
 ## Future directions and suggestions for additional features
 1. Ordering a setlist based on mood, feeling, dance, and group number. Originally, we set out to implement this, however we soon realized that classifying all of this is extremely subjective and out of our scope. A way to handle this could be using a spotify api or another platform that has already done this, or that has the technology or ai ability to do so. 
