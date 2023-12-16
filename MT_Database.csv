@@ -59,7 +59,7 @@ Do I Love You Because You're Beautiful?|171|['C4-G5']|Pop|False|Cinderella
 Do You Hear the People Sing?|136|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Operatic|True|Les Miserables
 Do You Love Me?|193|['C3-A4']|Folk|False|Fiddler on the Roof
 Don't Cry for Me Argentina|351|['C4-G5']|Pop|False|Evita
-Don't Rain on My Parade|164|['C4-G5']|Jazz|False|Funny Girl
+Don't Rain on My Parade|164|['C4-G5']|R&B|False|Funny Girl
 Don't Tell Mama|241|['C4-F5', 'C4-D5']|Jazz|True|Cabaret
 Do-Re-Mi|335|['C3-A4’],[‘G2-E4']|Folk|True|The Sound of Music
 Dust and Ashes|384|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Pop|True|Natasha, Pierre & the Great Comet of 1812
@@ -77,11 +77,11 @@ Fight for Me|155|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Pop|True|Heathers
 Flowers|211|['C3-A4']|Folk|False|Hadestown
 Follow Your Heart|287|['C3-A4']|Pop|False|Urinetown
 For Good|306|['C3-A4']|Pop|False|Wicked
-Forget About the Boy|203|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Jazz|True|Thoroughly Modren Millie
+Forget About the Boy|203|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|R&B|True|Thoroughly Modren Millie
 Freeze Your Brain|173|['Db3-G4']|Pop|False|Heathers
 Getting to Know You|212|['C3-A4’],[‘G2-E4']|Pop|True|The King and I
 Giants in the Sky|146|['C3-A4']|Pop|False|Into the Woods
-Gimme Gimme|214|['C4-G5']|Jazz|False|Thoroughly Modern Millie
+Gimme Gimme|214|['C4-G5']|R&B|False|Thoroughly Modern Millie
 Glory|354|['C3-A4’],[‘G2-E4']|Folk|True|Pippin
 Good Morning, Baltimore|220|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Pop|True|Hairspray
 Goodnight, My Someone|165|['C4-G5']|Jazz|False|The Music Man
@@ -109,20 +109,20 @@ I Dreamed a Dream|254|['F3-D5']|Operatic|False|Les Miserables
 I Hate Men|206|['C3-A4’],[‘G2-E4']|Jazz|True|Kiss Me, Kate
 I Know Him So Well|256|['C3-A4’],[‘G2-E4']|Rock|True|Chess
 I Know Things Now|108|['C4-G5']|Jazz|False|Into the Woods
-I Wanna Be a Producer|374|['C4-F5', 'C4-D5']|Jazz|True|The Producers
+I Wanna Be a Producer|374|['C4-F5', 'C4-D5']|R&B|True|The Producers
 I Whistle a Happy Tune|164|['C3-A4’],[‘G2-E4']|Pop|True|The King and I
 I Will Never Leave You|182|['C4-F5', 'C4-D5']|Pop|True|Side Show
 I'd Do Anything|163|['F3-D5']|Jazz|False|Oliver!
 If I Didn't Believe in You|312|['C4-G5']|Pop|False|The Last Five Years
-If I Loved You|261|['C3-A4']|Jazz|False|Carousel
+If I Loved You|261|['C3-A4']|R&B|False|Carousel
 If I Were a Bell|151|['C4-G5']|Jazz|False|Guys and Dolls
 If I Were a Rich Man|324|['F3-D5']|Pop|False|Fiddler on the Roof
-I'll Know|295|['C4-F5', 'C4-D5']|Jazz|True|Guys and Dolls
+I'll Know|295|['C4-F5', 'C4-D5']|R&B|True|Guys and Dolls
 Impossible|257|['C3-A4']|Pop|False|Cinderella
 The Impossible Dream (The Quest)|142|['F3-D5']|Jazz|False|Man of La Mancha
 I'm Gonna Wash That Man Right Outa My Hair|207|['C3-A4’],[‘G2-E4']|Jazz|True|South Pacific
 I'm Not That Girl|178|['F3-D5']|Pop|False|Wicked
-I'm Still Here|261|['C3-A4']|Jazz|False|Follies
+I'm Still Here|261|['C3-A4']|R&B|False|Follies
 I'm the Greatest Star|240|['C4-G5']|Jazz|False|Funny Girl
 In My Life|315|['F3-D5']|Operatic|False|Les Miserables
 In My Own Little Corner|225|['F3-D5']|Pop|False|Cinderella
@@ -147,13 +147,13 @@ Letters|387|['C3-A4’],[‘G2-E4']|Pop|True|Natasha, Pierre & the Great Comet o
 Light of the World|163|['C4-F5', 'C4-D5']|Folk|True|Godspell
 A Little Fall of Rain|203|['C3-A4']|Pop|False|Les Miserables
 Little Girls|192|['C3-A4']|Pop|False|Annie
-A Little Priest|437|['F3-D5']|Jazz|False|Sweeney Todd
+A Little Priest|437|['F3-D5']|R&B|False|Sweeney Todd
 Little Shop of Horrors|208|['C4-F5', 'C4-D5']|Rock|True|Little Shop of Horrors
 The Little Things You Do Together|187|['C4-G5']|Jazz|False|Company
 Livin' It Up on Top|329|['C3-A4’],[‘G2-E4']|Folk|True|Hadestown
 Look at the Sky|194|['C4-G5']|Pop|False|Urinetown
-A Lovely Night|130|['C4-F5', 'C4-D5']|Jazz|True|Cinderella
-Luck Be a Lady|182|['F3-D5']|Jazz|False|Guys and Dolls
+A Lovely Night|130|['C4-F5', 'C4-D5']|R&B|True|Cinderella
+Luck Be a Lady|182|['F3-D5']|R&B|False|Guys and Dolls
 Lullaby of Broadway|302|['C3-A4’],[‘G2-E4']|Pop|True|42nd Street
 Magic to Do|275|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Pop|True|Pippin
 Mama, I'm a Big Girl Now|198|['C3-A4’],[‘G2-E4']|Pop|True|Hairspray
@@ -164,14 +164,14 @@ Master of the House|294|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Jazz|True|Les Miserables
 Matchmaker|236|['C4-G5']|Folk|False|Fiddler on the Roof
 Maybe|157|['F3-D5']|Pop|False|Annie
 Maybe This Time|188|['F3-D5']|Jazz|False|Cabaret
-Mein Herr|213|['C4-G5']|Jazz|False|Cabaret
+Mein Herr|213|['C4-G5']|R&B|False|Cabaret
 Memory|315|['C3-A4']|Pop|False|Cats
 Miracle of Miracles|124|['C3-A4']|Folk|False|Fiddler on the Roof
 Moments in the Woods|183|['C4-G5']|Folk|False|Into the Woods
 More I Cannot Wish You|138|['C3-A4']|Jazz|False|Guys and Dolls
 Morning Glow|256|['C3-A4']|Folk|False|Pippin
 Moscow|267|['C3-A4']|Folk|False|Natasha, Pierre & the Great Comet of 1812
-Move Towards the Darkness|238|['C4-G5']|Jazz|False|The Addams Family
+Move Towards the Darkness|238|['C4-G5']|R&B|False|The Addams Family
 Moving Too Fast|244|['F3-D5']|Pop|False|The Last Five Years
 The Music and the Mirror|398|['C4-G5']|Jazz|False|A Chorus Line
 The Music of the Night|341|['C4-G5']|Operatic|False|The Phantom of the Opera
@@ -186,16 +186,16 @@ No One Else|260|['C4-G5']|Folk|False|Natasha, Pierre & the Great Comet of 1812
 No One Is Alone|237|['F3-D5']|Pop|False|Into the Woods
 No Time at All|354|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Folk|True|Pippin
 Not While I'm Around|236|['C4-F5', 'C4-D5']|Folk|True|Sweeney Todd
-Nowadays|287|['C3-A4’],[‘G2-E4']|Jazz|True|Chicago
+Nowadays|287|['C3-A4’],[‘G2-E4']|R&B|True|Chicago
 N.Y.C.|291|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Pop|True|Annie
 Oh, What a Beautiful Mornin'|200|['C4-G5']|Folk|False|Oklahoma!
 Oklahoma|196|['C3-A4’],[‘G2-E4']|Folk|True|Oklahoma!
 Ol' Man River|214|['C3-A4']|Operatic|False|Show Boat
 Old Deuteronomy|242|['C3-A4']|Jazz|False|Cats
 On My Own|251|['C4-F5', 'C4-D5']|Operatic|True|Les Miserables
-On the Right Track|234|['C4-G5']|Jazz|False|Pippin
+On the Right Track|234|['C4-G5']|R&B|False|Pippin
 On the Steps of the Palace|154|['C3-A4']|Operatic|False|Into the Woods
-On the Street Where You Live|176|['C3-A4']|Jazz|False|My Fair Lady
+On the Street Where You Live|176|['C3-A4']|R&B|False|My Fair Lady
 One|286|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Operatic|True|A Chorus Line
 One Day More|209|['C4-F5', 'C4-D5']|Operatic|True|Les Miserables
 One Last Time|296|['C3-A4’],[‘G2-E4']|Pop|True|Hamilton
@@ -213,7 +213,7 @@ Prologue|261|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Folk|True|Natasha, Pierre & the Grea
 Pulled|179|['F3-D5']|Pop|False|The Addams Family
 Put On a Happy Face|200|['C3-A4’],[‘G2-E4']|Jazz|True|Bye Bye Birdie
 Put On Your Sunday Clothes|257|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Jazz|True|Hello, Dolly!
-Razzle Dazzle|258|['F3-D5']|Jazz|False|Chicago
+Razzle Dazzle|258|['F3-D5']|R&B|False|Chicago
 Rent|265|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Rock|True|Rent
 Ribbons Down My Back|162|['C3-A4']|Jazz|False|Hello, Dolly!
 The Room Where It Happens|318|['C4-G5']|Pop|False|Hamilton
@@ -228,17 +228,17 @@ Seventy Six Trombones|181|['C3-A4’],[‘G2-E4']|Pop|True|The Music Man
 Shall We Dance?|261|['C4-F5', 'C4-D5']|Operatic|True|The King and I
 She Loves Me|250|['C4-F5', 'C4-D5']|Pop|True|She Loves Me
 Side by Side by Side|519|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Jazz|True|Company
-Simple Joys|152|['C3-A4']|Jazz|False|Pippin
+Simple Joys|152|['C3-A4']|R&B|False|Pippin
 Sit Down You're Rockin' the Boat|177|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Jazz|True|Guys and Dolls
 Sixteen Going on Seventeen|200|['C3-A4']|Folk|False|The Sound of Music
 Skid Row|257|['C3-A4’],[‘G2-E4']|Rock|True|Little Shop of Horrors
 So Much Better|209|['C3-A4']|Pop|False|Legally Blonde
-Some Enchanted Evening|181|['C4-G5']|Jazz|False|South Pacific
+Some Enchanted Evening|181|['C4-G5']|R&B|False|South Pacific
 Someone Else's Story|219|['C3-A4']|Pop|False|Chess
 Someone Is Waiting|173|['C3-A4']|Pop|False|Company
 Someone Like You|226|['C4-G5']|Jazz|False|Jekyll & Hyde
 Something Good|199|['C4-G5']|Folk|False|The Sound of Music
-Somewhere That's Green|235|['C3-A4']|Jazz|False|Little Shop of Horrors
+Somewhere That's Green|235|['C3-A4']|R&B|False|Little Shop of Horrors
 The Song of Purple Summer|208|['C4-F5', 'C4-D5']|Pop|True|Spring Awakening
 Sonya Alone|247|['C3-A4']|Folk|False|Natasha, Pierre & the Great Comet of 1812
 Sonya & Natasha|252|['C3-A4']|Folk|False|Natasha, Pierre & the Great Comet of 1812
@@ -255,7 +255,7 @@ Sunrise|248|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Pop|True|In the Heights
 Sunrise, Sunset|231|['C4-F5', 'C4-D5']|Folk|True|Fiddler on the Roof
 Superstar|238|['C3-A4']|Rock|False|Jesus Christ Superstar
 The Surrey with the Fringe on Top|293|['C3-A4']|Folk|False|Oklahoma!
-Take Back Your Mink|320|['C4-G5']|Jazz|False|Guys and Dolls
+Take Back Your Mink|320|['C4-G5']|R&B|False|Guys and Dolls
 Take Me or Leave Me|223|['C3-A4’],[‘G2-E4']|Rock|True|Rent
 Ten Minutes Ago|172|['C3-A4’],[‘G2-E4']|Pop|True|Cinderella
 That Would Be Enough|178|['C4-G5']|Pop|False|Hamilton
@@ -264,7 +264,7 @@ There's No Business Like Show Business|307|['C3-A4’],[‘G2-E4']|Pop|True|Anni
 Think of Me|249|['C3-A4']|Operatic|False|The Phantom of the Opera
 Thoroughly Modern Millie|177|['F3-D5']|Pop|False|Thoroughly Modern Millie
 Those Canaan Days|273|['C3-A4’],[‘G2-E4']|Jazz|True|Joseph and the Amazing Technicolor Dreamcoat
-Till There Was You|165|['C3-A4’],[‘G2-E4']|Jazz|True|The Music Man
+Till There Was You|165|['C3-A4’],[‘G2-E4']|R&B|True|The Music Man
 To Life|374|['C4-F5', 'C4-D5']|Folk|True|Fiddler on the Roof
 Tomorrow|127|['C4-G5']|Pop|False|Annie
 Tradition|425|['C3-A4’],[‘G2-E4']|Folk|True|Fiddler on the Roof
@@ -276,18 +276,18 @@ Wait for Me|214|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Folk|True|Hadestown
 Washington on Your Side|181|['C3-A4’],[‘G2-E4']|Pop|True|Hamilton
 Way Down Hadestown|300|['C3-A4’],[‘G2-E4']|Folk|True|Hadestown
 We Can Do It|215|['C3-A4’],[‘G2-E4']|Pop|True|The Producers
-We Go Together|179|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Jazz|True|Grease
+We Go Together|179|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|R&B|True|Grease
 We Raise Our Cups|125|['C3-A4’],[‘G2-E4']|Folk|True|Hadestown
 Wedding Song|213|['C3-A4’],[‘G2-E4']|Folk|True|Hadestown
 Welcome to the 60's|237|['Bb3-A5', 'Bb3-F5', 'Bb3-E5']|Pop|True|Hairspray
-What Do I Need With Love|183|['C4-G5']|Jazz|False|Thoroughly Modern Millie
+What Do I Need With Love|183|['C4-G5']|R&B|False|Thoroughly Modern Millie
 What I Did for Love|226|['C3-A4’],[‘G2-E4']|Operatic|True|A Chorus Line
 What Is This Feeling?|212|['C3-A4’],[‘G2-E4']|Pop|True|Wicked
 What'd I Miss|236|['C3-A4']|Jazz|False|Hamilton
 When the Chips Are Down|134|['C3-A4’],[‘G2-E4']|Folk|True|Hadestown
 When the Sun Goes Down|152|['C4-F5', 'C4-D5']|Pop|True|In the Heights
 When You Got It, Flaunt It|218|['F3-D5']|Pop|False|The Producers
-When You're Good to Mama|202|['C4-G5']|Jazz|False|Chicago
+When You're Good to Mama|202|['C4-G5']|R&B|False|Chicago
 Where is Love?|215|['F3-D5']|Operatic|False|Oliver!
 Whispering|215|['C3-A4’],[‘G2-E4']|Rock|True|Spring Awakening
 Who Am I?|168|['C4-G5']|Operatic|False|Les Miserables
