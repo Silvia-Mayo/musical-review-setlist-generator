@@ -156,15 +156,15 @@ class Analysis():
             input: show length
             returns: np.array of songs'''
         time = int(input("Enter length of your show in seconds: "))
-        sl = []
+        temp_set_list = []
         start_time = 0
         np.random.shuffle(setlist)
         for songs in setlist:
             name,length,srange,style,group,show = songs
             if (int(length) + start_time) <= time:
-                sl.append(songs)
+                temp_set_list.append(songs)
                 start_time = start_time + int(length)
-        setlist = np.array(sl)
+        setlist = np.array(temp_set_list)
         return setlist
         
     
