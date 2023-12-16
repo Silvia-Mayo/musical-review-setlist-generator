@@ -49,12 +49,10 @@ class Analysis():
         ms_list = input("Enter the song length in the minute:seconds format: ").split(':')
         song_length = int(ms_list[0]) * 60 + int(ms_list[1])
         song_ranges = []
-        v_range = input("Type a vocal range (the lowest and highest notes separated by a hyphen)\
-                        for each soloist in the song. Press 'Enter' when done: ")
+        v_range = input("Type a vocal range (the lowest and highest notes separated by a hyphen)\nfor each soloist in the song. Press 'Enter' when done: ")
         while v_range:
             song_ranges.append(v_range)
-            v_range = input("Type a vocal range (the lowest and highest notes separated by a hyphen)\
-                            for each soloist in the song. Press 'Enter' when done: ")
+            v_range = input("Type a vocal range (the lowest and highest notes separated by a hyphen)\nfor each soloist in the song. Press 'Enter' when done: ")
         song_genre = input("What genre best describes this song?\nPlease choose from 'Folk', 'Jazz', 'Operatic', 'Pop', 'Rock', and 'R&B': ")
         song_is_group = bool(int(input("Is this song a group number (is there back-up singing)? Type 1 for yes and 0 for no: ")))
         song_musical = input("Enter the name of the musical this song is in: ")
