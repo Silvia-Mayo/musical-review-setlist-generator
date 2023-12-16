@@ -23,12 +23,12 @@ class Analysis():
         self.singers = []
         return
         
-    def sort_songs(self, key):
+    def sort_songs(self, key, file_name):
         ''' A function to sort the songs based on user input (in place)
         
             input: key for the song sorting
             returns: np.array of sorted songs'''
-        np_songs = song.read_database('MT_Database.csv')
+        np_songs = song.read_database(file_name)
         column_sort = int(key)
         if key in '12':
             column_sort -= 1
@@ -36,13 +36,12 @@ class Analysis():
         print (np_songs[sorted_songs])
         return (np_songs[sorted_songs])
 
-    def add_song(self):
+    def add_song(self,file_name):
         ''' A function to add a song to the database.
             input: song to be added
             returns: nothing'''
-        file_path = 'MT_Database.csv'
 
-        with open('MT_Database.csv', 'r', newline='') as csvfile:
+        with open(file_name, 'r', newline='') as csvfile:
                 csv_read = csv.reader(csvfile)
                 existing_data = list(csv_read)
         song_name = input("Enter the song name: ")
@@ -58,7 +57,7 @@ class Analysis():
         song_musical = input("Enter the name of the musical this song is in: ")
         new_entry = [song_name + "|" + str(song_length) + "|" + str(song_ranges) + "|" + song_genre + "|" + str(song_is_group) + "|" + song_musical]
         existing_data.append(new_entry)
-        with open(file_path, 'a', newline='') as csvfile:
+        with open(file_name, 'a', newline='') as csvfile:
             csvfile.write('\n')
             writer = csv.writer(csvfile)
             writer.writerow(new_entry)
