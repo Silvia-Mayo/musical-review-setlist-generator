@@ -154,70 +154,59 @@ if __name__ == '__main__':
     def unit_tests():
         '''
         UNIT TESTS
+        '''
         
-        Hi Professor Roberts,
-        
-        These unit tests will run automatically after you quit the generator above.
-        The functions I tested include user_search and display_all_songs. Unfortunately,
-        I am having an issue comparing np arrays and all of these instances return false 
-        even when I am sure that they are the same, so I will have to look into that more later.
-        Additionally, there are a lot of extra spaces in our database csv files which I will have 
-        to fix later, but for now, these tests account for these inconsistencies as we are still
-        building our full database.
-        
-        UPDATE: The functions and tests have been modified, so they should now all pass.'''
+        def __int__(self):
+            print("Test 1: \n")
+            test1 = generator.user_search(self,'Hadestown')
+            test1_expected = np.array([["All I've Ever Known", 243, "['Gb3-Db5', 'Db3-Ab4']", 'Folk', False, 'Hadestown'],
+            ['Epic III', 351, "['']", 'Folk', True, 'Hadestown'],
+            ['Flowers', 211, "['']", 'Folk', False,'Hadestown'],
+            ['Hey, Little Songbird', 212, "['']", 'Folk', True, 'Hadestown'],
+            ["Livin' It Up on Top", 329, "['']", 'Folk', True, 'Hadestown'],
+            ['Our Lady of the Underground', 324, "['']", 'Folk', False, 'Hadestown'],
+            ['Wait for Me', 214, "['']", 'Folk', True, 'Hadestown'],
+            ['Way Down Hadestown', 300, "['']", 'Folk', True, 'Hadestown'],
+            ['We Raise Our Cups', 125, "['']", 'Folk', True, 'Hadestown'],
+            ['Wedding Song', 213, "['']", 'Folk', True, 'Hadestown'],
+            ['When the Chips Are Down', 134, "['']", 'Folk', True, 'Hadestown'],
+            ['Why We Build the Wall', 240, "['']", 'Folk', False, 'Hadestown']])
+            print("\n")
 
+            print("test 1 expected = ", test1_expected)
+            if np.array_equal(test1, test1_expected):
+                print("test 1 passed!")
+            else: print("test 1 failed")
+            print("\n")
+            
+            print("Test 2: \n")
+            test2 = generator.user_search(140)
+            test2_expected = np.array([['Angel of Music', 140, "['C4-F5', 'C4-D5']", 'Operatic', False, 'The Phantom of the Opera'],
+                                    ['My Favorite Things', 140, "['']", 'Folk', True, 'The Sound of Music']])
+            print("\n")
 
-        print("Test 1: \n")
-        test1 = generator.user_search('Hadestown')
-        test1_expected = np.array([["All I've Ever Known", 243, "['Gb3-Db5', 'Db3-Ab4']", 'Folk', False, 'Hadestown'],
-          ['Epic III', 351, "['']", 'Folk', True, 'Hadestown'],
-          ['Flowers', 211, "['']", 'Folk', False,'Hadestown'],
-          ['Hey, Little Songbird', 212, "['']", 'Folk', True, 'Hadestown'],
-          ["Livin' It Up on Top", 329, "['']", 'Folk', True, 'Hadestown'],
-          ['Our Lady of the Underground', 324, "['']", 'Folk', False, 'Hadestown'],
-          ['Wait for Me', 214, "['']", 'Folk', True, 'Hadestown'],
-          ['Way Down Hadestown', 300, "['']", 'Folk', True, 'Hadestown'],
-          ['We Raise Our Cups', 125, "['']", 'Folk', True, 'Hadestown'],
-          ['Wedding Song', 213, "['']", 'Folk', True, 'Hadestown'],
-          ['When the Chips Are Down', 134, "['']", 'Folk', True, 'Hadestown'],
-          ['Why We Build the Wall', 240, "['']", 'Folk', False, 'Hadestown']])
-        print("\n")
+            print("test 2 expected = ", test2_expected)
+            if np.array_equal(test2, test2_expected):
+                print("test 2 passed!")
+            else: print("test 2 failed")
+            
+            print("\n")
+            
+            test3 = generator.user_search('Agony')
+            test3_expected = np.array([['Agony', 147, "['D3-F4', 'C3-F4']", 'Operatic', False, 'Into the Woods']])
+            print(test3_expected)
+            if np.array_equal(test3, test3_expected):
+                print("test 3 passed!")
+            else: print("test 3 failed")
+            print("\n")
 
-        print("test 1 expected = ", test1_expected)
-        if np.array_equal(test1, test1_expected):
-            print("test 1 passed!")
-        else: print("test 1 failed")
-        print("\n")
-        
-        print("Test 2: \n")
-        test2 = generator.user_search(140)
-        test2_expected = np.array([['Angel of Music', 140, "['C4-F5', 'C4-D5']", 'Operatic', False, 'The Phantom of the Opera'],
-                                ['My Favorite Things', 140, "['']", 'Folk', True, 'The Sound of Music']])
-        print("\n")
-
-        print("test 2 expected = ", test2_expected)
-        if np.array_equal(test2, test2_expected):
-            print("test 2 passed!")
-        else: print("test 2 failed")
-        
-        print("\n")
-        
-        test3 = generator.user_search('Agony')
-        test3_expected = np.array([['Agony', 147, "['D3-F4', 'C3-F4']", 'Operatic', False, 'Into the Woods']])
-        print(test3_expected)
-        if np.array_equal(test3, test3_expected):
-            print("test 3 passed!")
-        else: print("test 3 failed")
-        print("\n")
-
-        print("Test 4: \n")
-        test4 = generator.user_search('')
-        test4_expected = np.empty(test4.shape)
-        print(test4_expected)
-        if np.array_equal(test4, test4_expected):
-            print("test 4 passed!")
-        else: print("test 4 failed")
-        print("\n")
-        
-    unit_tests()
+            print("Test 4: \n")
+            test4 = generator.user_search('')
+            test4_expected = np.empty(test4.shape)
+            print(test4_expected)
+            if np.array_equal(test4, test4_expected):
+                print("test 4 passed!")
+            else: print("test 4 failed")
+            print("\n")
+            
+        unit_tests()
