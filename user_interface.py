@@ -126,6 +126,10 @@ class generator():
         print("Test 4 \n")
         test4 = Analysis.songs_by_time(self,self.song_list)
         print(test4)
+        
+        print("Test 5\n")
+        test5 = Analysis.add_song(self, 'Test2_MT_Database.csv')
+        print(test5)
                     
     def run_generator(self):
         ''' A function to run the generator based on user input. 
