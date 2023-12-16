@@ -12,6 +12,8 @@ class note_range():
     '''Class note_range allows the program to interpret a string
     representing a range of musical notes numerically and meaningfully'''
     def __init__(self, lohi):
+        if '-' not in lohi:
+            lohi = 'C3-A4'
         [low, high] = lohi.split('-')
         self.low = low
         self.high = high
@@ -114,6 +116,9 @@ class song():
             csv_list = list(csv_read)
             if len(csv_list) == 0:
                 return np.array([])
+            for row in csv_list:
+                for i in (1, 4):
+                    row[i] = eval(row[i])
             csv_array = np.array(csv_list)
             return(csv_array)
         
@@ -159,10 +164,10 @@ for (lohi1, lohi2, b) in c_r:
     gen_unit_test(note_range(lohi1).contains_range, note_range(lohi2), b)
 
 songs = [song('Bring Him Home', 195, ['E3-A4'], 'Operatic', False, 'Les Miserables'),
-         song('Freeze Your Brain', 173, ['Db3-G4'], 'Pop-Rock', False, 'Heathers'),
+         song('Freeze Your Brain', 173, ['Db3-G4'], 'Pop', False, 'Heathers'),
          song('Green Finch and Linnet Bird', 144, ['C4-G5'], 'Operatic', False, 'Sweeney Todd'),
          song('Mein Herr', 200, ['G3-D5'], 'Jazz', False, 'Cabaret'),
-         song('Pulled', 179, ['C4-E5'], 'Pop-Rock', False, 'The Addams Family')]
+         song('Pulled', 179, ['C4-E5'], 'Pop', False, 'The Addams Family')]
 
 Olivia = singer('Olivia', 'Bb3-A5')
 Georgia = singer('Georgia', 'F3-E5')
@@ -170,8 +175,8 @@ Alex = singer('Alex', 'Eb3-D5')
 David = singer('David', 'A2-G4')
 Patrick = singer('Patrick', 'C2-D4')
 
-singers = [[Georgia, Alex], [Olivia, David], [Patrick, Olivia], [David, Alex], [Patrick, Georgia]]
+vocalists = [[Georgia, Alex], [Olivia, David], [Patrick, Olivia], [David, Alex], [Patrick, Georgia]]
 
 for i in range(5):
     for n in range(2):
-        gen_unit_test(songs[i].is_suitable, singers[i][n], bool(n))
+        gen_unit_test(songs[i].is_suitable, vocalists[i][n], bool(n))
