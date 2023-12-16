@@ -148,35 +148,45 @@ class song():
         print('        Show:', self.show_title)
         return
 
-g_n = [('C0', 0), ('F#1', 18), ('Gb1', 18), ('D#3', 39), ('Fb3', 40),
-       ('C4', 48), ('A4', 57), ('Cb5', 59), ('B#4', 60), ('B#9', 120)]
 
-for (inp, out) in g_n:
-    gen_unit_test(note_range.get_num, inp, out)
 
-c_r = [('C4-G5', 'G4-C5', True), ('Cb4-B#4', 'B#3-Cb5', True),
-       ('G#4-A#4', 'A4-A4', True), ('Db4-Cb5', 'Fb4-B#4', False),
-       ('F0-F1', 'C4-G5', False), ('F3-C6', 'Bb2-G4', False),
-       ('F3-C6', 'C4-G5', True), ('C4-G5', 'F3-C6', False),
-       ('E#2-Bb3', 'Fb2-G3', False), ('E#2-Bb3', 'F2-G3', True)]
+'''
+UNIT TESTS
+'''
+def unit_test():
+    g_n = [('C0', 0), ('F#1', 18), ('Gb1', 18), ('D#3', 39), ('Fb3', 40),
+        ('C4', 48), ('A4', 57), ('Cb5', 59), ('B#4', 60), ('B#9', 120)]
 
-for (lohi1, lohi2, b) in c_r:
-    gen_unit_test(note_range(lohi1).contains_range, note_range(lohi2), b)
+    for (inp, out) in g_n:
+        gen_unit_test(note_range.get_num, inp, out)
 
-songs = [song('Bring Him Home', 195, ['E3-A4'], 'Operatic', False, 'Les Miserables'),
-         song('Freeze Your Brain', 173, ['Db3-G4'], 'Pop', False, 'Heathers'),
-         song('Green Finch and Linnet Bird', 144, ['C4-G5'], 'Operatic', False, 'Sweeney Todd'),
-         song('Mein Herr', 200, ['G3-D5'], 'Jazz', False, 'Cabaret'),
-         song('Pulled', 179, ['C4-E5'], 'Pop', False, 'The Addams Family')]
+    c_r = [('C4-G5', 'G4-C5', True), ('Cb4-B#4', 'B#3-Cb5', True),
+        ('G#4-A#4', 'A4-A4', True), ('Db4-Cb5', 'Fb4-B#4', False),
+        ('F0-F1', 'C4-G5', False), ('F3-C6', 'Bb2-G4', False),
+        ('F3-C6', 'C4-G5', True), ('C4-G5', 'F3-C6', False),
+        ('E#2-Bb3', 'Fb2-G3', False), ('E#2-Bb3', 'F2-G3', True)]
 
-Olivia = singer('Olivia', 'Bb3-A5')
-Georgia = singer('Georgia', 'F3-E5')
-Alex = singer('Alex', 'Eb3-D5')
-David = singer('David', 'A2-G4')
-Patrick = singer('Patrick', 'C2-D4')
+    for (lohi1, lohi2, b) in c_r:
+        gen_unit_test(note_range(lohi1).contains_range, note_range(lohi2), b)
 
-vocalists = [[Georgia, Alex], [Olivia, David], [Patrick, Olivia], [David, Alex], [Patrick, Georgia]]
+    songs = [song('Bring Him Home', 195, ['E3-A4'], 'Operatic', False, 'Les Miserables'),
+            song('Freeze Your Brain', 173, ['Db3-G4'], 'Pop', False, 'Heathers'),
+            song('Green Finch and Linnet Bird', 144, ['C4-G5'], 'Operatic', False, 'Sweeney Todd'),
+            song('Mein Herr', 200, ['G3-D5'], 'Jazz', False, 'Cabaret'),
+            song('Pulled', 179, ['C4-E5'], 'Pop', False, 'The Addams Family')]
 
-for i in range(5):
-    for n in range(2):
-        gen_unit_test(songs[i].is_suitable, vocalists[i][n], bool(n))
+    Olivia = singer('Olivia', 'Bb3-A5')
+    Georgia = singer('Georgia', 'F3-E5')
+    Alex = singer('Alex', 'Eb3-D5')
+    David = singer('David', 'A2-G4')
+    Patrick = singer('Patrick', 'C2-D4')
+
+    vocalists = [[Georgia, Alex], [Olivia, David], [Patrick, Olivia], [David, Alex], [Patrick, Georgia]]
+
+    for i in range(5):
+        for n in range(2):
+            gen_unit_test(songs[i].is_suitable, vocalists[i][n], bool(n))
+            
+
+
+unit_test()
