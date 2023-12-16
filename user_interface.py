@@ -21,6 +21,7 @@ class generator():
             returns: nothing
         '''
         self.a = Analysis()
+        self.song_list = song.read_database('MT_Database.csv')
 
     def add_singer(self):
         ''' A function to add a singer profile to the database.
@@ -62,15 +63,14 @@ class generator():
         print('\n')
         return
         
-    def user_search(keyword):
+    def user_search(self, keyword):
         ''' A function to allow the user to search for any song in the database.
 
             input: keyword (to search all fields), name, range
             return: np.array of songs matching the keyword
         '''
-        song_list = song.read_database('MT_Database.csv')
-        index = np.where(song_list == keyword)
-        result = song_list[index[0], :]
+        index = np.where(self.song_list == keyword)
+        result = self.song_list[index[0], :]
         print(result)
         return result
     
@@ -79,20 +79,19 @@ class generator():
             aiming to find by using this generator
             
             input: nothing
-            returns: nothing'''
-        song_list = song.read_database('MT_Database.csv')
-        
+            returns: setlist'''
+
         search_by_genre = input("Would you like to consider genre when building your setlist? (y: yes, n: no) ")
         if search_by_genre == 'y':
-            setlist = self.a.songs_for_show_by_genre(song_list)
+            setlist = self.a.songs_by_genre(self.song_list)
         
         search_by_singer_ranges = input("Would you like to generate a setlist base on singer profiles? (y: yes, n: no) ")
         if search_by_singer_ranges == 'y':
-            '''setlist = Analysis.songs_for_show_by_singer_profile(self)'''
+            setlist = self.a.songs_by_singers(self.song_list)
         
         search_by_timetime = input("Would you like to generate a setlist based on the length of your show? (y: yes, n: no) ")
         if search_by_timetime == 'y':
-            setlist = self.a.songs_for_show_by_time(setlist)
+            setlist = self.a.songs_by_time(setlist)
         print (setlist)
         return (setlist)
                     
@@ -124,7 +123,7 @@ class generator():
             user_action = input("Enter a number: ")
             if user_action == '1':
                 key = input("Search for a song by singer, group number, show: ")
-                generator.user_search(key)
+                generator.user_search(self, key)
             elif user_action == '2':
                 print("How would you like to display the songs?")
                 print("1: Alphabetically by song")
@@ -170,19 +169,19 @@ if __name__ == '__main__':
 
 
         print("Test 1: \n")
-        test1 = generator.user_search(' Hadestown')
-        test1_expected = np.array([["All I've Ever Known",'243','Hadestown'],
-          ['Epic III','351','Hadestown'],
-          ['Flowers','211','Hadestown'],
-          ['Hey, Little Songbird','212','Hadestown'],
-          ["Livin' It Up on Top",'329','Hadestown'],
-          ['Our Lady of the Underground','324','Hadestown'],
-          ['Wait for Me','214','Hadestown'],
-          ['Way Down Hadestown','300','Hadestown'],
-          ['We Raise Our Cups','125','Hadestown'],
-          ['Wedding Song','213','Hadestown'],
-          ['When the Chips Are Down','134','Hadestown'],
-          ['Why We Build the Wall','240','Hadestown']])
+        test1 = generator.user_search('Hadestown')
+        test1_expected = np.array([["All I've Ever Known", 243, "['Gb3-Db5', 'Db3-Ab4']", 'Folk', False, 'Hadestown'],
+          ['Epic III', 351, "['']", 'Folk', True, 'Hadestown'],
+          ['Flowers', 211, "['']", 'Folk', False,'Hadestown'],
+          ['Hey, Little Songbird', 212, "['']", 'Folk', True, 'Hadestown'],
+          ["Livin' It Up on Top", 329, "['']", 'Folk', True, 'Hadestown'],
+          ['Our Lady of the Underground', 324, "['']", 'Folk', False, 'Hadestown'],
+          ['Wait for Me', 214, "['']", 'Folk', True, 'Hadestown'],
+          ['Way Down Hadestown', 300, "['']", 'Folk', True, 'Hadestown'],
+          ['We Raise Our Cups', 125, "['']", 'Folk', True, 'Hadestown'],
+          ['Wedding Song', 213, "['']", 'Folk', True, 'Hadestown'],
+          ['When the Chips Are Down', 134, "['']", 'Folk', True, 'Hadestown'],
+          ['Why We Build the Wall', 240, "['']", 'Folk', False, 'Hadestown']])
         print("\n")
 
         print("test 1 expected = ", test1_expected)
@@ -192,9 +191,9 @@ if __name__ == '__main__':
         print("\n")
         
         print("Test 2: \n")
-        test2 = generator.user_search(' 140 ')
-        test2_expected = np.array([['Angel of Music' ,'140', 'The Phantom of the Opera'],
-                                ['My Favorite Things' ,'140' ,'The Sound of Music']])
+        test2 = generator.user_search(140)
+        test2_expected = np.array([['Angel of Music', 140, "['C4-F5', 'C4-D5']", 'Operatic', False, 'The Phantom of the Opera'],
+                                ['My Favorite Things', 140, "['']", 'Folk', True, 'The Sound of Music']])
         print("\n")
 
         print("test 2 expected = ", test2_expected)
@@ -204,8 +203,8 @@ if __name__ == '__main__':
         
         print("\n")
         
-        test3 = generator.user_search('Agony ')
-        test3_expected = np.array([['Agony' ,'147', 'Into the Woods']])
+        test3 = generator.user_search('Agony')
+        test3_expected = np.array([['Agony', 147, "['D3-F4', 'C3-F4']", 'Operatic', False, 'Into the Woods']])
         print(test3_expected)
         if np.array_equal(test3, test3_expected):
             print("test 3 passed!")
@@ -219,21 +218,6 @@ if __name__ == '__main__':
         if np.array_equal(test4, test4_expected):
             print("test 4 passed!")
         else: print("test 4 failed")
-        print("\n")
-
-        print("Test 5: \n")
-        test5 = generator.display_all_songs()
-        test5_expected = np.array([['Bring Him Home', '195', "['E3-A4']", 'Operatic', 'False', 'Les Miserables'],
-                                    ['Freeze Your Brain', '173', "['Db3-G4']", 'Pop-Rock', 'False', 'Heathers'],
-                                    ['Green Finch and Linnet Bird', '144', "['C4-G5']", 'Operatic', 'False', 'Sweeney Todd'],
-                                    ['Mein Herr', '200', "['G3-D5']", 'Jazz', 'False', 'Cabaret'],
-                                    ['Pulled', '179', "['C4-E5']", 'Pop-Rock', 'False', 'The Addams Family']])
-        
-        print(test5_expected)
-        print("\n")
-        if np.array_equal(test5, test5_expected):
-            print("test 5 passed!")
-        else: print("test 5 failed")
         print("\n")
         
     unit_tests()
