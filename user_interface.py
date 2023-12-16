@@ -132,9 +132,9 @@ class generator():
                 print("4: All non-group numbers first")
                 print("5: Alphabetically by musical")
                 sort_by = input("Enter a number: ")
-                Analysis.sort_songs(self, sort_by)
+                Analysis.sort_songs(self, sort_by, 'MT_Database.csv')
             elif user_action == '3':
-                Analysis.add_song(self)
+                Analysis.add_song(self, 'MT_Database.csv')
             elif user_action == '4':
                 generator.add_singer(self)
             elif user_action == '5':
